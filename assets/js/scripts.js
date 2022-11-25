@@ -5,12 +5,11 @@ const head_content = document.getElementById('head_content');
 const menu_content = document.getElementById('menu_content');
 const page_content = document.getElementById('page_content');
 
-let page = url_params.get('p');
+let p = url_params.get('p');
+let page = 'partials/index.md';
 
-if (!page) {
-  page = 'partials/index.md';
-} else {
-  page = `contents/${page}.md`;
+if (p) {
+  page = `contents/${p}.md`;
 }
 
 const get_data = async (url, json = true) => {
