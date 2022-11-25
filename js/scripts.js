@@ -1,7 +1,13 @@
 const url_params = new URLSearchParams(window.location.search);
 const menu_content = document.getElementById('menu_content');
 const page_content = document.getElementById('page_content');
-const page = url_params.get('p');
+let page = url_params.get('p');
+
+if (!page) {
+  page = 'partials/index.md';
+} else {
+  page = `contents/${page}.md`;
+}
 
 const get_data = async (url, json = true) => {
   try {
@@ -17,7 +23,7 @@ const get_data = async (url, json = true) => {
   }
 }
 
-get_data('https://raw.githubusercontent.com/impshum/blurg/main/contents/' + page + '.md', json = false)
+get_data(`https://raw.githubusercontent.com/impshum/blurg/main/${page}`, json = false)
   .then((res) => {
     let node = document.createElement('div');
     node.innerHTML = marked.parse(res);
@@ -27,6 +33,7 @@ get_data('https://raw.githubusercontent.com/impshum/blurg/main/contents/' + page
 get_data('https://api.github.com/repos/impshum/blurg/contents/contents')
   .then((res) => {
     for (var i = 0; i < res.length; i++) {
+      console.log(res);
       let node = document.createElement('a');
       let page_title = res[i].name.replace('.md', '');
       node.href = '/?p=' + page_title;
