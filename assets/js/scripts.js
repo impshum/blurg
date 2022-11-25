@@ -32,6 +32,13 @@ const insert_head_content = (data) => {
   head_content.appendChild(node);
 }
 
+if (!sessionStorage.getItem('hits')) {
+  sessionStorage.setItem('hits', 1);
+  head_content.parentNode.parentNode.classList.add('animate__animated', 'animate__fadeInDown');
+} else {
+  sessionStorage.setItem('hits', parseInt(sessionStorage.getItem('hits')) + 1);
+}
+
 if (!sessionStorage.getItem('pages')) {
   sessionStorage.setItem('pages', JSON.stringify([]));
 }
@@ -57,6 +64,8 @@ get_data(`https://raw.githubusercontent.com/${github_username}/blurg/main/${page
     let node = document.createElement('div');
     node.innerHTML = marked.parse(res);
     page_content.appendChild(node);
+    page_content.parentNode.style.display = 'block'
+    page_content.parentNode.classList.add('animate__animated', 'animate__fadeIn');
     sessionStorage.setItem(page, JSON.stringify(res.substr(3)));
   });
 

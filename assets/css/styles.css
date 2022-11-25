@@ -1,6 +1,11 @@
 html {
   overflow-y: scroll;
 }
+
+* {
+  font-family: 'Nunito', sans-serif;
+}
+
 .animate__delay-05s {
   -webkit-animation-delay: .3s;
   animation-delay: .3s;
@@ -25,6 +30,12 @@ html {
   color: #fff;
 }
 
+img.logo {
+  width: 20%;
+  float: left;
+  margin-right: 60px;
+}
+
 .title a:hover {
   transition: color: .3s;
   text-decoration: none;
@@ -38,11 +49,15 @@ img.home {
   height: 18px;
 }
 
+#main {
+  display: none;
+}
+
 #page_content img {
   border: 1px solid #526a80;
   border-radius: 5px;
   padding: 10px;
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .footer {
