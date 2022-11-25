@@ -65,7 +65,7 @@ get_data(`https://raw.githubusercontent.com/${github_username}/blurg/main/${page
     node.innerHTML = marked.parse(res);
     page_content.appendChild(node);
     page_content.parentNode.style.display = 'block'
-    page_content.parentNode.classList.add('animate__animated', 'animate__fadeIn');
+    page_content.parentNode.classList.add('animate__animated', 'animate__fadeIn', 'animate__fast');
     sessionStorage.setItem(page, JSON.stringify(res.substr(3)));
   });
 
