@@ -37,7 +37,6 @@ const get_all_pages = () => {
 
 get_data('https://raw.githubusercontent.com/impshum/blurg/main/contents/' + page + '.md', json = false)
    .then((res) => {
-     console.log(res);
      let node = document.createElement('div');
      node.innerHTML = marked.parse(res);;
      page_content.appendChild(node);

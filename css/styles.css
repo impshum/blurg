@@ -1,5 +1,25 @@
 .container {
-  padding: 1rem 2rem 3rem;
-  border: 1px solid rgba(255,255,255,0.2);
+  padding: 1rem 3rem 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 5px;
+  margin: 2rem auto;
+}
+
+.title {
+  padding-top: 1rem;
+}
+
+.title h2 {
+  margin-top: -.75rem;
+  font-size: 1.2rem;
+}
+
+.title a {
+  margin-right: 7px;
+  font-size: 1.2rem;
+}
+.footer {
+  font-size: .8rem;
+  margin-top: 1rem;
+  text-align: center;
 }
