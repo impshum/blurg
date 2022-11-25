@@ -24,7 +24,7 @@ const get_data = async (url, json = true) => {
   }
 }
 
-get_data(`https://raw.githubusercontent.com/impshum/blurg/main/${page}`, json = false)
+get_data(`https://raw.githubusercontent.com/impshum/blurg/main/${page}`, false)
   .then((res) => {
     let node = document.createElement('div');
     node.innerHTML = marked.parse(res);
