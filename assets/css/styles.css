@@ -28,8 +28,18 @@
   text-decoration: none;
 }
 
+img.home {
+  position: relative;
+  top: 3px;
+  margin-right: 5px ;
+}
+
 .footer {
-  font-size: .8rem;
-  margin-top: 1rem;
+  font-size: .75setem;
+  margin: 1rem auto 2rem;
   text-align: center;
+}
+
+.footer a {
+  color: inherit;
 }

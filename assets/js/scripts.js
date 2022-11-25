@@ -1,4 +1,5 @@
 const url_params = new URLSearchParams(window.location.search);
+const head_content = document.getElementById('head_content');
 const menu_content = document.getElementById('menu_content');
 const page_content = document.getElementById('page_content');
 
@@ -24,12 +25,24 @@ const get_data = async (url, json = true) => {
   }
 }
 
+get_data(`https://raw.githubusercontent.com/impshum/blurg/main/partials/header.md`, false)
+  .then((res) => {
+    let node = document.createElement('div');
+    node.innerHTML = marked.parse(res);
+    head_content.appendChild(node);
+  });
+
 get_data(`https://raw.githubusercontent.com/impshum/blurg/main/${page}`, false)
   .then((res) => {
     let node = document.createElement('div');
     node.innerHTML = marked.parse(res);
     page_content.appendChild(node);
   });
+
+let node = document.createElement('a');
+node.href = `/`;
+node.innerHTML = `<img class='home' src='/assets/img/home.png'>`;
+menu_content.appendChild(node);
 
 get_data('https://api.github.com/repos/impshum/blurg/contents/contents')
   .then((res) => {
@@ -41,5 +54,3 @@ get_data('https://api.github.com/repos/impshum/blurg/contents/contents')
       menu_content.appendChild(node);
     }
   });
-
-console.log(window.location);
