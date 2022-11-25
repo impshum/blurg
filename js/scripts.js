@@ -1,6 +1,10 @@
 const url_params = new URLSearchParams(window.location.search);
 const menu_content = document.getElementById('menu_content');
 const page_content = document.getElementById('page_content');
+const header = document.getElementById('header');
+const main = document.getElementById('main');
+const footer = document.getElementById('footer');
+
 let page = url_params.get('p');
 
 if (!page) {
@@ -37,7 +41,21 @@ get_data('https://api.github.com/repos/impshum/blurg/contents/contents')
       let node = document.createElement('a');
       let page_title = res[i].name.replace('.md', '');
       node.href = '/?p=' + page_title;
-      node.textContent = page_title.charAt(0).toUpperCase() + page_title.substr(1).toLowerCase();
+      node.textContent = page_title.charAt(2).toUpperCase() + page_title.substr(3).toLowerCase();
       menu_content.appendChild(node);
     }
   });
+
+const links = document.getElementsByTagName('a');
+for (var i = 0; i < links.length; i++) {
+  links[i].onclick = (e) => {
+    e.preventDefault();
+    console.log(e);
+    let elements = [header, main, footer];
+    for (var i = 0; i < elements.length; i++) {
+      elements[i].classList.remove('animate__fadeIn');
+      elements[i].classList.remove('animate__fadeInDown');
+      elements[i].classList.add('animate__fadeOut');
+    }
+  }
+}
