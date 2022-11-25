@@ -1,12 +1,15 @@
+html {
+  overflow-y: scroll;
+}
 .animate__delay-05s {
-  -webkit-animation-delay: .5s;
-  animation-delay: .5s;
+  -webkit-animation-delay: .3s;
+  animation-delay: .3s;
 }
 
 .container {
   margin: 2rem auto;
   padding: 1rem 3rem 3rem;
-  border: 1px solid rgba(255, 255, 255, .2);
+  border: 1px solid #526a80;
   border-radius: 5px;
 }
 
@@ -32,11 +35,19 @@ img.home {
   position: relative;
   top: 3px;
   margin-right: 5px;
+  height: 18px;
+}
+
+#page_content img {
+  border: 1px solid #526a80;
+  border-radius: 5px;
+  padding: 10px;
+  background: rgba(0,0,0,0.2);
 }
 
 .footer {
   font-size: .75rem;
-  margin: 1rem auto 2rem;
+  margin: 4rem auto;
   text-align: center;
 }
 
