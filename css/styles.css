@@ -1,3 +1,8 @@
+.animate__delay-05s {
+  -webkit-animation-delay: .5s;
+  animation-delay: .5s;
+}
+
 .container {
   padding: 1rem 3rem 3rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -6,7 +11,7 @@
 }
 
 .title {
-  padding-top: 1rem;
+  padding-top: .5rem;
 }
 
 .title h2 {
@@ -17,7 +22,16 @@
 .title a {
   margin-right: 7px;
   font-size: 1.2rem;
+  color: #fff;
+  transition: color: .3s;
 }
+
+.title a:hover {
+  transition: color: .3s;
+  color: #f5f5f5;
+  text-decoration: none;
+}
+
 .footer {
   font-size: .8rem;
   margin-top: 1rem;
