@@ -1,3 +1,5 @@
+const github_username = 'impshum';
+
 const url_params = new URLSearchParams(window.location.search);
 const head_content = document.getElementById('head_content');
 const menu_content = document.getElementById('menu_content');
@@ -25,14 +27,14 @@ const get_data = async (url, json = true) => {
   }
 }
 
-get_data(`https://raw.githubusercontent.com/impshum/blurg/main/partials/header.md`, false)
+get_data(`https://raw.githubusercontent.com/${github_username}/blurg/main/partials/header.md`, false)
   .then((res) => {
     let node = document.createElement('div');
     node.innerHTML = marked.parse(res);
     head_content.appendChild(node);
   });
 
-get_data(`https://raw.githubusercontent.com/impshum/blurg/main/${page}`, false)
+get_data(`https://raw.githubusercontent.com/${github_username}/blurg/main/${page}`, false)
   .then((res) => {
     let node = document.createElement('div');
     node.innerHTML = marked.parse(res);
@@ -44,7 +46,7 @@ node.href = `/`;
 node.innerHTML = `<img class='home' src='/assets/img/home.png'>`;
 menu_content.appendChild(node);
 
-get_data('https://api.github.com/repos/impshum/blurg/contents/contents')
+get_data(`https://api.github.com/repos/${github_username}/blurg/contents/contents`)
   .then((res) => {
     for (var i = 0; i < res.length; i++) {
       let node = document.createElement('a');
