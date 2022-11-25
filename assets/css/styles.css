@@ -4,28 +4,28 @@
 }
 
 .container {
-  padding: 1rem 3rem 3rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 5px;
   margin: 2rem auto;
+  padding: 1rem 3rem 3rem;
+  border: 1px solid rgba(255, 255, 255, .2);
+  border-radius: 5px;
 }
 
 .title h2 {
-  margin-top: -.75rem;
   font-size: 1.2rem;
+  margin-top: -.75rem;
 }
 
 .title a {
-  margin-right: 7px;
   font-size: 1.2rem;
-  color: #fff;
+  margin-right: 7px;
   transition: color: .3s;
+  color: #fff;
 }
 
 .title a:hover {
   transition: color: .3s;
-  color: #f5f5f5;
   text-decoration: none;
+  color: #f5f5f5;
 }
 
 img.home {
@@ -35,7 +35,7 @@ img.home {
 }
 
 .footer {
-  font-size: .75setem;
+  font-size: .75rem;
   margin: 1rem auto 2rem;
   text-align: center;
 }
