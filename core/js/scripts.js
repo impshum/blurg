@@ -4,6 +4,7 @@ const head_content = document.getElementById('head_content');
 const menu_content = document.getElementById('menu_content');
 const page_content = document.getElementById('page_content');
 const clear_session_data = document.getElementById('clear_session_data');
+const edit_button = document.getElementById('edit_button');
 
 const get_data = async (url, json = true) => {
   try {
@@ -44,6 +45,7 @@ let p = url_params.get('p');
 let page = 'partials/index.md';
 
 if (!p) {
+  p = 'index';
   page = 'partials/index.md';
 } else if (p && p != 'blurgs') {
   page = `contents/${p}.md`;
@@ -51,6 +53,16 @@ if (!p) {
   page = `partials/blurgs.md`;
   get_blurgs();
 }
+
+if (p != 'index' && p != 'blurg') {
+  edit_button.onclick = (e) => {
+    window.open(`https://github.com/${github_username}/blurg/edit/main/contents/${p}.md`, '_blank').focus();
+  }
+} else {
+  edit_button.remove();
+}
+
+
 
 if (!sessionStorage.getItem('hits')) {
   sessionStorage.setItem('hits', 1);
@@ -69,6 +81,9 @@ const add_head_content = (res) => {
 const add_menu_content = (res) => {
   for (var i = 0; i < res.length; i++) {
     let node = document.createElement('a');
+    if (sessionStorage.getItem('hits') == 1) {
+      node.classList.add('animate__animated', 'animate__fadeIn', 'animate__faster', `animate__delay-${i}00s`);
+    }
     let page_title = res[i].name.replace('.md', '');
     node.href = `/?p=${page_title}`;
     node.textContent = page_title.charAt(2).toUpperCase() + page_title.substr(3).toLowerCase();

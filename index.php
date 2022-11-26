@@ -70,6 +70,7 @@ $config = require __DIR__ . "/config.php";
 
   <div id="main" class="container">
     <article id="page_content"></article>
+    <button id="edit_button">Edit page</button>
   </div>
 
   <div id="footer" class="footer animate__animated animate__fadeIn animate__faster animate__delay-1s">

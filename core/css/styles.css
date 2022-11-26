@@ -11,6 +11,41 @@ html {
   animation-delay: .3s;
 }
 
+.animate__delay-000s {
+  -webkit-animation-delay: .1s;
+  animation-delay: .1s;
+}
+
+.animate__delay-100s {
+  -webkit-animation-delay: .2s;
+  animation-delay: .2s;
+}
+
+.animate__delay-200s {
+  -webkit-animation-delay: .3s;
+  animation-delay: .3s;
+}
+
+.animate__delay-300s {
+  -webkit-animation-delay: .4s;
+  animation-delay: .4s;
+}
+
+.animate__delay-400s {
+  -webkit-animation-delay: .5s;
+  animation-delay: .5s;
+}
+
+.animate__delay-500s {
+  -webkit-animation-delay: .6s;
+  animation-delay: .6s;
+}
+
+.animate__delay-600s {
+  -webkit-animation-delay: .7s;
+  animation-delay: .7s;
+}
+
 .container {
   margin: 2rem auto;
   padding: 1rem 3rem 3rem;
@@ -62,6 +97,15 @@ img.home {
 button.flex {
   width: 100%;
 }
+
+#edit_button {
+  position: absolute;
+  top: 6px;
+  right: 0px;
+  padding: .5rem;
+  font-size: .7rem;
+}
+
 #main {
   display: none;
 }
