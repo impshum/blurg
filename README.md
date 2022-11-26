@@ -39,15 +39,15 @@ A website with editable content using markdown files stored on Github. Pages and
 -   Put all images to be used in pages in the `/images/` directory.
 
 
-      ├── contents
-      │   ├── 1-one.md
-      │   ├── 2-two.md
-      │   └── 3-three.md
-      ├── images
-      │   └── thing.jpg
-      ├── partials
-      │   ├── header.md
-      │   └── index.md
+    ├── contents
+    │   ├── 1-one.md
+    │   ├── 2-two.md
+    │   └── 3-three.md
+    ├── images
+    │   └── thing.jpg
+    ├── partials
+    │   ├── header.md
+    │   └── index.md
 
 
 * * *
@@ -57,9 +57,9 @@ A website with editable content using markdown files stored on Github. Pages and
 - These files are for the logo, favicon, home and social share images. Edit `favicon.png`, `social.jpg` and `logo.webp` to your liking.
 
 
-    ├── assets
-    │   ├── img
-    │   │   ├── favicon.png
-    │   │   ├── home.webp
-    │   │   ├── logo.webp
-    │   │   └── social.jpg
+  ├── assets
+  │   ├── img
+  │   │   ├── favicon.png
+  │   │   ├── home.webp
+  │   │   ├── logo.webp
+  │   │   └── social.jpg
