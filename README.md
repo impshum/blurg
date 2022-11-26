@@ -24,11 +24,12 @@ A website with editable content using markdown files stored on Github. Pages and
 -   Config file is located in `/config.php`.
 -   It's a PHP array so be careful when editing. Please follow the example below using exactly the same syntax.
 
-
-      "url" => "<http://localhost:8888">,
-      "title" => "Blurg",
-      "description" => "A website with editable content using markdown files stored on Github",
-      "github_username" => "impshum"
+```
+"url" => "<http://localhost:8888">,
+"title" => "Blurg",
+"description" => "A website with editable content using markdown files stored on Github",
+"github_username" => "impshum"
+```
 
 * * *
 
