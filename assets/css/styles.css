@@ -31,11 +31,11 @@ html {
 }
 
 img.logo {
+  float: left;
   width: 100px;
   height: 100px;
-  float: left;
-  padding-right: 50px;
   padding-top: 15px;
+  padding-right: 50px;
 }
 
 @media only screen and (max-width : 768px) {
@@ -53,8 +53,8 @@ img.logo {
 img.home {
   position: relative;
   top: 3px;
-  margin-right: 5px;
   height: 18px;
+  margin-right: 5px;
 }
 
 #main {
@@ -62,10 +62,10 @@ img.home {
 }
 
 #page_content img {
+  padding: 10px;
   border: 1px solid #526a80;
   border-radius: 5px;
-  padding: 10px;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, .2);
 }
 
 .footer {
