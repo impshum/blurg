@@ -1,4 +1,4 @@
-const github_username = 'impshum';
+
 
 const url_params = new URLSearchParams(window.location.search);
 const logo = document.getElementById('logo');

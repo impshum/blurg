@@ -1,3 +1,7 @@
+
+<?php
+$config = require __DIR__ . "/config.php";
+?>
 <!doctype html>
 
 <html lang="en">
@@ -6,21 +10,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Blurg</title>
-  <meta name="description" content="A website with editable content using markdown files stored on Github">
+  <title><?php echo $config["title"]; ?></title>
+  <meta name="description" content="<?php echo $config["description"]; ?>">
 
-  <meta name="theme-color" content="#000">
+  <meta name="theme-color" content="#202b39">
   <meta name="robots" content="index, nofollow">
 
-  <meta property="og:title" content="Blurg">
+  <meta property="og:title" content="<?php echo $config["title"]; ?>">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://github.com/impshum/blurg">
-  <meta property="og:description" content="A website with editable content using markdown files stored on Github">
-  <meta property="og:image" content="/assets/img/social.jpg">
+  <meta property="og:url" content="<?php echo $config["url"]; ?>">
+  <meta property="og:description" content="<?php echo $config["description"]; ?>">
+  <meta property="og:image" content="<?php echo $config["url"]; ?>/assets/img/social.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="600">
 
-  <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.png">
+  <link rel="shortcut icon" type="image/png" href="<?php echo $config["url"]; ?>/assets/img/favicon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,6 +55,9 @@
     Made by <a href="https://recycledrobot.co.uk">Recycled Robot</a> with a keyboard<br>
   </div>
 
+  <script>
+    const github_username = '<?php echo $config["github_username"]; ?>';
+  </script>
   <script src="/assets/js/marked.min.js"></script>
   <script src="/assets/js/scripts.js"></script>
 </body>
