@@ -65,6 +65,7 @@ $config = require __DIR__ . "/config.php";
         <a href="/"><img class='home' src='/core/img/home.png'></a>
       </div>
     </div>
+    <div id="clear_session_data"></div>
   </header>
 
   <div id="main" class="container">

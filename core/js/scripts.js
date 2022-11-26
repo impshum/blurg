@@ -1,20 +1,9 @@
-
-
 const url_params = new URLSearchParams(window.location.search);
 const logo = document.getElementById('logo');
 const head_content = document.getElementById('head_content');
 const menu_content = document.getElementById('menu_content');
 const page_content = document.getElementById('page_content');
-
-let p = url_params.get('p');
-let page = 'partials/index.md';
-
-if (p && p != 'blurgs') {
-  page = `contents/${p}.md`;
-} else {
-  page = `partials/${p}.md`;
-}
-console.log(page);
+const clear_session_data = document.getElementById('clear_session_data');
 
 const get_data = async (url, json = true) => {
   try {
@@ -28,6 +17,41 @@ const get_data = async (url, json = true) => {
   } catch (err) {
     console.error(`ERROR: ${err}`);
   }
+}
+
+const get_blurgs = () => {
+  get_data(`https://api.github.com/repos/impshum/blurg/forks`, true)
+    .then((res) => {
+      let github_usernames = [];
+      for (var i = 0; i < res.length; i++) {
+        github_usernames.push(res[i].owner.login);
+      }
+       console.log(github_usernames);
+       let node = document.createElement('div');
+       for (var i = 0; i < github_usernames.length; i++) {
+         github_usernames[i]
+       }
+
+       page_content.appendChild(node);
+      //sessionStorage.setItem(page, JSON.stringify(res));
+    });
+}
+
+clear_session_data.onclick = () => {
+  sessionStorage.clear();
+  window.location.reload();
+}
+
+let p = url_params.get('p');
+let page = 'partials/index.md';
+
+if (!p) {
+  page = 'partials/index.md';
+} else if (p && p != 'blurgs') {
+  page = `contents/${p}.md`;
+} else if (p && p == 'blurgs') {
+  page = `partials/blurgs.md`;
+  get_blurgs();
 }
 
 if (!sessionStorage.getItem('hits')) {

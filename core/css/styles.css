@@ -16,6 +16,7 @@ html {
   padding: 1rem 3rem 3rem;
   border: 1px solid #526a80;
   border-radius: 5px;
+  position: relative;
 }
 
 .title h2 {
@@ -55,7 +56,7 @@ img.home {
   top: 1px;
   height: 15px;
   width: 15px;
-  margin-right: 5px;
+  margin-right: 2px;
 }
 
 #main {
@@ -67,6 +68,23 @@ img.home {
   padding: 2px;
   border: 1px solid #526a80;
   border-radius: 5px;
+}
+
+#clear_session_data {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 15px;
+  height: 15px;
+  background: transparent;
+  transition: background .3s;
+  border-radius: 3px;
+}
+
+#clear_session_data:hover {
+  background: rgba(155,155,155,0.2);
+  transition: background .3s;
+  cursor: pointer;
 }
 
 .footer {
