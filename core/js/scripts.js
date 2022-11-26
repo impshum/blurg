@@ -27,11 +27,6 @@ const get_data = async (url, json = true) => {
   }
 }
 
-let node = document.createElement('a');
-node.href = `/`;
-node.innerHTML = `<img class='home' src='/assets/img/home.webp'>`;
-menu_content.appendChild(node);
-
 if (!sessionStorage.getItem('hits')) {
   sessionStorage.setItem('hits', 1);
   head_content.parentNode.parentNode.classList.add('animate__animated', 'animate__fadeInDown');

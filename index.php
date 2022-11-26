@@ -20,19 +20,29 @@ $config = require __DIR__ . "/config.php";
   <meta property="og:type" content="website">
   <meta property="og:url" content="<?php echo $config["url"]; ?>">
   <meta property="og:description" content="<?php echo $config["description"]; ?>">
-  <meta property="og:image" content="<?php echo $config["url"]; ?>/assets/img/social.jpg">
+  <meta property="og:image" content="<?php echo $config["url"]; ?>/core/img/social.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="600">
 
-  <link rel="shortcut icon" type="image/png" href="<?php echo $config["url"]; ?>/assets/img/favicon.png">
+  <link rel="shortcut icon" type="image/png" href="<?php echo $config["url"]; ?>/core/img/favicon.png">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+  <?php
+  $theme = $config["theme"];
+  echo "<link rel='stylesheet' href='/core/css/$theme.css'>";
 
-  <link rel="stylesheet" href="/assets/css/dark.css">
-  <link rel="stylesheet" href="/assets/css/animate.min.css">
-  <link rel="stylesheet" href="/assets/css/styles.css">
+  $menu_link_colors = [
+    "light" => "#0a0a0a",
+    "dark" => "#ffffff",
+    "auto" => "inherit"
+  ];
+
+  $menu_link_color = $menu_link_colors[$config["theme"]];
+
+  echo "<style>.title a:hover {color: $menu_link_color !important;}</style>";
+  ?>
+
+  <link rel="stylesheet" href="/core/css/animate.min.css">
+  <link rel="stylesheet" href="/core/css/styles.css">
 
 </head>
 
@@ -40,10 +50,20 @@ $config = require __DIR__ . "/config.php";
 
   <header id="header" class="container">
     <div class="title">
-      <img id="logo" class="logo" src="/assets/img/logo.webp">
+      <?php
+      $logos = [
+        "light" => "logo.webp",
+        "dark" => "logo.webp",
+        "auto" => "logo.webp"
+      ];
+      $logo = $logos[$config["theme"]];
+      echo "<img id='logo' class='logo' src='/core/img/logo.png'>";
+      ?>
       <div id="head_content"></div>
       <hr>
-      <div id="menu_content"></div>
+      <div id="menu_content">
+        <a href="/"><img class='home' src='/core/img/home.png'></a>
+      </div>
     </div>
   </header>
 
@@ -58,8 +78,8 @@ $config = require __DIR__ . "/config.php";
   <script>
     const github_username = '<?php echo $config["github_username"]; ?>';
   </script>
-  <script src="/assets/js/marked.min.js"></script>
-  <script src="/assets/js/scripts.js"></script>
+  <script src="/core/js/marked.min.js"></script>
+  <script src="/core/js/scripts.js"></script>
 </body>
 
 </html>
