@@ -63,6 +63,7 @@ img.home {
 }
 
 #page_content img {
+  width: 100%;
   padding: 10px;
   border: 1px solid #526a80;
   border-radius: 5px;
