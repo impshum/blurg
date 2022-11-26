@@ -12,6 +12,7 @@ let page = 'partials/index.md';
 if (p) {
   page = `contents/${p}.md`;
 }
+console.log(page);
 
 const get_data = async (url, json = true) => {
   try {
@@ -45,7 +46,7 @@ const add_menu_content = (res) => {
   for (var i = 0; i < res.length; i++) {
     let node = document.createElement('a');
     let page_title = res[i].name.replace('.md', '');
-    node.href = `/${page_title}`;
+    node.href = `/?p=${page_title}`;
     node.textContent = page_title.charAt(2).toUpperCase() + page_title.substr(3).toLowerCase();
     menu_content.appendChild(node);
   }

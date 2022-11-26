@@ -1,6 +1,6 @@
-RewriteEngine On
-RewriteRule ^([^/d]+)/?$ index.php?p=$1 [QSA]
+#RewriteEngine On
+#RewriteRule ^([^/d]+)/?$ index.php?p=$1 [QSA]
 
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^([^\.]+)$ $1.php [NC,L]
+#RewriteEngine On
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule ^([^\.]+)$ $1.php [NC,L]

@@ -4,5 +4,5 @@ return [
   "title" => "Blurg",
   "description" => "Blurg",
   "theme" => "auto",
-  "github_username" => "idontwantausernameplease"
+  "github_username" => "impshum"
 ];
