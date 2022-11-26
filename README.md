@@ -34,7 +34,7 @@ A website with editable content using markdown files stored on Github. Pages and
 
 * * *
 
-### Markdown Files
+### Markdown & Page Image Files
 
 -   These files are used to edit the pages and partials.
 -   Index is the home page `/partials/index.md`.
@@ -54,7 +54,7 @@ A website with editable content using markdown files stored on Github. Pages and
 
 * * *
 
-### Image Files
+### Site Image Files
 
 - These files are for the logo, favicon, home and social share images. Edit `favicon.png`, `social.jpg` and `logo.webp` to your liking.
 
