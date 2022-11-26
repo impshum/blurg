@@ -5,7 +5,7 @@ A website with editable content using markdown files stored on Github. Pages and
 * * *
 
 ### Screenshot
-![](screenshot.jpg)
+![](ss.jpg)
 
 * * *
 
