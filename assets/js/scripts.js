@@ -32,6 +32,11 @@ const insert_head_content = (data) => {
   head_content.appendChild(node);
 }
 
+let node = document.createElement('a');
+node.href = `/`;
+node.innerHTML = `<img class='home' src='/assets/img/home.png'>`;
+menu_content.appendChild(node);
+
 if (!sessionStorage.getItem('hits')) {
   sessionStorage.setItem('hits', 1);
   head_content.parentNode.parentNode.classList.add('animate__animated', 'animate__fadeInDown');
@@ -39,15 +44,10 @@ if (!sessionStorage.getItem('hits')) {
   sessionStorage.setItem('hits', parseInt(sessionStorage.getItem('hits')) + 1);
 }
 
-if (!sessionStorage.getItem('pages')) {
-  sessionStorage.setItem('pages', JSON.stringify([]));
-}
-
 let pages_storage = JSON.parse(sessionStorage.getItem('pages'));
 let head_content_storage = sessionStorage.getItem('head_content');
 
 if (sessionStorage.getItem('head_content')) {
-  console.log('head_content from ls');
   insert_head_content(JSON.parse(sessionStorage.getItem('head_content')));
 } else {
   get_data(`https://raw.githubusercontent.com/${github_username}/blurg/main/partials/header.md`, false)
@@ -59,23 +59,26 @@ if (sessionStorage.getItem('head_content')) {
     });
 }
 
-get_data(`https://raw.githubusercontent.com/${github_username}/blurg/main/${page}`, false)
-  .then((res) => {
-    let node = document.createElement('div');
-    node.innerHTML = marked.parse(res);
-    page_content.appendChild(node);
-    page_content.parentNode.style.display = 'block'
-    page_content.parentNode.classList.add('animate__animated', 'animate__fadeIn', 'animate__fast');
-    sessionStorage.setItem(page, JSON.stringify(res.substr(3)));
-  });
-
-let node = document.createElement('a');
-node.href = `/`;
-node.innerHTML = `<img class='home' src='/assets/img/home.png'>`;
-menu_content.appendChild(node);
+if (sessionStorage.getItem(page)) {
+  var res = JSON.parse(sessionStorage.getItem(page));
+  let node = document.createElement('div');
+  node.innerHTML = marked.parse(res);
+  page_content.appendChild(node);
+  page_content.parentNode.style.display = 'block'
+  page_content.parentNode.classList.add('animate__animated', 'animate__fadeIn', 'animate__fast');
+} else {
+  get_data(`https://raw.githubusercontent.com/${github_username}/blurg/main/${page}`, false)
+    .then((res) => {
+      let node = document.createElement('div');
+      node.innerHTML = marked.parse(res);
+      page_content.appendChild(node);
+      page_content.parentNode.style.display = 'block'
+      page_content.parentNode.classList.add('animate__animated', 'animate__fadeIn', 'animate__fast');
+      sessionStorage.setItem(page, JSON.stringify(res));
+    });
+}
 
 if (sessionStorage.getItem('menu_content')) {
-  console.log('menu_content from ls');
   var res = JSON.parse(sessionStorage.getItem('menu_content'));
 
   for (var i = 0; i < res.length; i++) {

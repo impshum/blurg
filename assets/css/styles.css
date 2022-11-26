@@ -31,9 +31,17 @@ html {
 }
 
 img.logo {
-  width: 20%;
+  width: 100px;
+  height: 100px;
   float: left;
-  margin-right: 60px;
+  padding-right: 50px;
+  padding-top: 15px;
+}
+
+@media only screen and (max-width : 768px) {
+  img.logo {
+    display: none;
+  }
 }
 
 .title a:hover {
