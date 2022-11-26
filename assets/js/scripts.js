@@ -1,6 +1,7 @@
 const github_username = 'impshum';
 
 const url_params = new URLSearchParams(window.location.search);
+const logo = document.getElementById('logo');
 const head_content = document.getElementById('head_content');
 const menu_content = document.getElementById('menu_content');
 const page_content = document.getElementById('page_content');
@@ -34,12 +35,13 @@ const insert_head_content = (data) => {
 
 let node = document.createElement('a');
 node.href = `/`;
-node.innerHTML = `<img class='home' src='/assets/img/home.png'>`;
+node.innerHTML = `<img class='home' src='/assets/img/home.webp'>`;
 menu_content.appendChild(node);
 
 if (!sessionStorage.getItem('hits')) {
   sessionStorage.setItem('hits', 1);
   head_content.parentNode.parentNode.classList.add('animate__animated', 'animate__fadeInDown');
+  logo.classList.add('animate__animated', 'animate__fadeIn', 'animate__delay-05s');
 } else {
   sessionStorage.setItem('hits', parseInt(sessionStorage.getItem('hits')) + 1);
 }
