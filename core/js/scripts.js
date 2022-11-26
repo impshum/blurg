@@ -9,8 +9,10 @@ const page_content = document.getElementById('page_content');
 let p = url_params.get('p');
 let page = 'partials/index.md';
 
-if (p) {
+if (p && p != 'blurgs') {
   page = `contents/${p}.md`;
+} else {
+  page = `partials/${p}.md`;
 }
 console.log(page);
 
