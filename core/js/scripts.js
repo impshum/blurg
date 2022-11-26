@@ -22,18 +22,16 @@ const get_data = async (url, json = true) => {
 const get_blurgs = () => {
   get_data(`https://api.github.com/repos/impshum/blurg/forks`, true)
     .then((res) => {
-      let github_usernames = [];
+      let node = document.createElement('button');
+      node.classList.add('flex');
+      node.textContent = 'impshum';
+      page_content.appendChild(node);
       for (var i = 0; i < res.length; i++) {
-        github_usernames.push(res[i].owner.login);
+        let node = document.createElement('button');
+        node.classList.add('flex');
+        node.textContent = res[i].owner.login;
+        page_content.appendChild(node);
       }
-       console.log(github_usernames);
-       let node = document.createElement('div');
-       for (var i = 0; i < github_usernames.length; i++) {
-         github_usernames[i]
-       }
-
-       page_content.appendChild(node);
-      //sessionStorage.setItem(page, JSON.stringify(res));
     });
 }
 

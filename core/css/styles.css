@@ -59,6 +59,9 @@ img.home {
   margin-right: 2px;
 }
 
+button.flex {
+  width: 100%;
+}
 #main {
   display: none;
 }
@@ -82,7 +85,7 @@ img.home {
 }
 
 #clear_session_data:hover {
-  background: rgba(155,155,155,0.2);
+  background: rgba(155, 155, 155, 0.2);
   transition: background .3s;
   cursor: pointer;
 }

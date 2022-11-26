@@ -77,7 +77,7 @@ $config = require __DIR__ . "/config.php";
   </div>
 
   <script>
-    const github_username = '<?php echo $config["github_username"]; ?>';
+    let github_username = '<?php echo $config["github_username"]; ?>';
   </script>
   <script src="/core/js/marked.min.js"></script>
   <script src="/core/js/scripts.js"></script>
