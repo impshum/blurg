@@ -52,8 +52,9 @@ img.logo {
 
 img.home {
   position: relative;
-  top: 3px;
-  height: 18px;
+  top: 1px;
+  height: 15px;
+  width: 15px;
   margin-right: 5px;
 }
 
