@@ -78,14 +78,10 @@ $config = require __DIR__ . "/config.php";
       Made by <a href="https://recycledrobot.co.uk">Recycled Robot</a> with a keyboard<br>
     </div>
   <?php } else { ?>
-    <div class="container">
-      <article>
-        <img id='logo' class='logo' src='/core/img/logo.png'>
-        <h1 class="is-centered">Coming soon</h1>
-        <h2 class="is-centered">Watch this space!</h2>
-
-      </article>
-    </div>
+    <article class="is-centered"><br><br><br>
+      <h1 class="is-centered">Coming soon</h1><br>
+      <img src='/core/img/logo.png'>
+    </article>
   <?php } ?>
 
 

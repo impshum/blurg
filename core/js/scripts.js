@@ -92,7 +92,7 @@ const add_menu_content = (res) => {
         node.classList.add('animate__animated', 'animate__fadeIn', 'animate__faster', `animate__delay-${i}00s`);
       }
       let page_title = res[i].name.replace('.md', '');
-      node.href = `/${page_title}`;
+      node.href = `/?p=${page_title}`;
       node.textContent = page_title.charAt(2).toUpperCase() + page_title.substr(3).toLowerCase();
       menu_content.appendChild(node);
     }

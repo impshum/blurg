@@ -1,8 +1,8 @@
 RewriteEngine On
-RewriteRule ^([^/d]+)/?$ index.php?p=$1 [QSA]
+#RewriteRule ^([^/d]+)/?$ index.php?p=$1 [QSA]
 
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^([^\.]+)$ $1.php [NC,L]
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule ^([^\.]+)$ $1.php [NC,L]
 
 
 #RewriteCond %{HTTPS} off
