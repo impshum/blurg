@@ -4,5 +4,7 @@ return [
   "title" => "Blurg",
   "description" => "Blurg",
   "theme" => "auto",
-  "github_username" => "impshum"
+  "github_username" => "idontwantausernameplease",
+  "maintainence_mode" => false,
+  "preview_password" => "123"
 ];

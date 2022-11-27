@@ -6,6 +6,10 @@ const page_content = document.getElementById('page_content');
 const clear_session_data = document.getElementById('clear_session_data');
 const edit_button = document.getElementById('edit_button');
 
+if (!page_content) {
+  throw new Error("maintainence mode");
+}
+
 const get_data = async (url, json = true) => {
   try {
     const req = await fetch(url, {
@@ -36,9 +40,11 @@ const get_blurgs = () => {
     });
 }
 
-clear_session_data.onclick = () => {
-  sessionStorage.clear();
-  window.location.reload();
+if (clear_session_data) {
+  clear_session_data.onclick = () => {
+    sessionStorage.clear();
+    window.location.reload();
+  }
 }
 
 let p = url_params.get('p');
@@ -59,10 +65,10 @@ if (p != 'index' && p != 'blurg') {
     window.open(`https://github.com/${github_username}/blurg/edit/main/contents/${p}.md`, '_blank').focus();
   }
 } else {
-  edit_button.remove();
+  if (edit_button) {
+    edit_button.remove();
+  }
 }
-
-
 
 if (!sessionStorage.getItem('hits')) {
   sessionStorage.setItem('hits', 1);
@@ -85,7 +91,7 @@ const add_menu_content = (res) => {
       node.classList.add('animate__animated', 'animate__fadeIn', 'animate__faster', `animate__delay-${i}00s`);
     }
     let page_title = res[i].name.replace('.md', '');
-    node.href = `/?p=${page_title}`;
+    node.href = `/${page_title}`;
     node.textContent = page_title.charAt(2).toUpperCase() + page_title.substr(3).toLowerCase();
     menu_content.appendChild(node);
   }

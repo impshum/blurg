@@ -80,6 +80,10 @@ img.logo {
   }
 }
 
+.is-centered {
+  text-align: center;
+}
+
 .title a:hover {
   transition: color: .3s;
   text-decoration: none;
@@ -99,7 +103,8 @@ button.flex {
 }
 
 #menu_content {
-  overflow; hidden;
+  overflow;
+  hidden;
   width: 100%;
 }
 

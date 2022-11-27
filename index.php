@@ -48,34 +48,46 @@ $config = require __DIR__ . "/config.php";
 
 <body>
 
-  <header id="header" class="container">
-    <div class="title">
-      <?php
-      $logos = [
-        "light" => "logo.webp",
-        "dark" => "logo.webp",
-        "auto" => "logo.webp"
-      ];
-      $logo = $logos[$config["theme"]];
-      echo "<img id='logo' class='logo' src='/core/img/logo.png'>";
-      ?>
-      <div id="head_content"></div>
-      <hr>
-      <div id="menu_content">
-        <a href="/"><img class='home' src='/core/img/home.png'></a>
+  <?php if (!$config["maintainence_mode"] || isset($_GET["preview"]) && $_GET["preview"] == $config["preview_password"]) { ?>
+    <header id="header" class="container">
+      <div class="title">
+        <?php
+        $logos = [
+          "light" => "logo.webp",
+          "dark" => "logo.webp",
+          "auto" => "logo.webp"
+        ];
+        $logo = $logos[$config["theme"]];
+        echo "<img id='logo' class='logo' src='/core/img/logo.png'>";
+        ?>
+        <div id="head_content"></div>
+        <hr>
+        <div id="menu_content">
+          <a href="/"><img class='home' src='/core/img/home.png'></a>
+        </div>
       </div>
+      <div id="clear_session_data"></div>
+    </header>
+
+    <div id="main" class="container">
+      <article id="page_content"></article>
+      <button id="edit_button" class="animate__animated animate__fadeIn animate__delay-1s">Edit page</button>
     </div>
-    <div id="clear_session_data"></div>
-  </header>
 
-  <div id="main" class="container">
-    <article id="page_content"></article>
-    <button id="edit_button">Edit page</button>
-  </div>
+    <div id="footer" class="footer animate__animated animate__fadeIn animate__faster animate__delay-1s">
+      Made by <a href="https://recycledrobot.co.uk">Recycled Robot</a> with a keyboard<br>
+    </div>
+  <?php } else { ?>
+    <div class="container">
+      <article>
+        <img id='logo' class='logo' src='/core/img/logo.png'>
+        <h1 class="is-centered">Coming soon</h1>
+        <h2 class="is-centered">Watch this space!</h2>
 
-  <div id="footer" class="footer animate__animated animate__fadeIn animate__faster animate__delay-1s">
-    Made by <a href="https://recycledrobot.co.uk">Recycled Robot</a> with a keyboard<br>
-  </div>
+      </article>
+    </div>
+  <?php } ?>
+
 
   <script>
     let github_username = '<?php echo $config["github_username"]; ?>';

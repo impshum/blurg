@@ -1,6 +1,23 @@
-#RewriteEngine On
-#RewriteRule ^([^/d]+)/?$ index.php?p=$1 [QSA]
+RewriteEngine On
+RewriteRule ^([^/d]+)/?$ index.php?p=$1 [QSA]
 
-#RewriteEngine On
-#RewriteCond %{REQUEST_FILENAME} !-f
-#RewriteRule ^([^\.]+)$ $1.php [NC,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+
+#RewriteCond %{HTTPS} off
+#RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+
+<ifmodule mod_deflate.c>
+<ifmodule mod_mime.c>
+Addtype font/opentype .otf
+Addtype font/eot .eot
+Addtype font/truetype .ttf
+</ifmodule>
+AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/x-javascript application/javascript text/text font/opentype font/truetype font/eot
+</ifmodule>
+#End Gzip
+
+<FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
+Header set Cache-Control "max-age=604800, public"
+</FilesMatch>
