@@ -6,5 +6,6 @@ return [
   "theme" => "auto",
   "github_username" => "impshum",
   "maintenance_mode" => false,
-  "preview_password" => "123"
+  "preview_password" => "123",
+  "show_ads" => true
 ];

@@ -42,7 +42,6 @@ A website with editable content using markdown files stored on Github. Pages and
 ### Markdown & Image Files
 
 -   These files are used to edit the pages, partials and to manage the images.
--   Index is the home page `/contents/partials/index.md`.
 -   Put all images to be used in pages in the `/contents/images/` directory.
 
 ```

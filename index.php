@@ -60,12 +60,19 @@ $config = require __DIR__ . "/config.php";
         </div>
       </div>
       <div id="clear_session_data"></div>
+      <div id="clear_session_data"></div>
     </header>
 
     <div id="main" class="container">
       <article id="page_content"></article>
       <button id="edit_button" class="animate__animated animate__fadeIn animate__delay-1s">Edit page</button>
     </div>
+
+    <?php if ($config["show_ads"]) { ?>
+      <div id="ads" class="container animate__animated animate__fadeIn animate__delay-1s">
+        <img class="ad" src="/contents/images/ad.jpg">
+      </div>
+    <?php  } ?>
 
     <div id="footer" class="footer animate__animated animate__fadeIn animate__faster animate__delay-1s">
       Made by <a href="https://recycledrobot.co.uk">Recycled Robot</a> with a keyboard<br>
