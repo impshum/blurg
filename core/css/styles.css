@@ -155,6 +155,23 @@ button.flex {
   cursor: pointer;
 }
 
+#show_blurgs {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 15px;
+  height: 15px;
+  background: transparent;
+  transition: background .3s;
+  border-radius: 3px;
+}
+
+#show_blurgs:hover {
+  background: rgba(155, 155, 155, 0.2);
+  transition: background .3s;
+  cursor: pointer;
+}
+
 .footer {
   font-size: .75rem;
   margin: 4rem auto;

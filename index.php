@@ -60,7 +60,7 @@ $config = require __DIR__ . "/config.php";
         </div>
       </div>
       <div id="clear_session_data"></div>
-      <div id="clear_session_data"></div>
+      <a href="/?p=blurgs" id="show_blurgs"></a>
     </header>
 
     <div id="main" class="container">
