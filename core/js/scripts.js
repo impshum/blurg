@@ -48,15 +48,15 @@ if (clear_session_data) {
 }
 
 let p = url_params.get('p');
-let page = 'partials/index.md';
+let page = 'contents/partials/index.md';
 
 if (!p) {
   p = 'index';
-  page = 'partials/index.md';
+  page = 'contents/partials/index.md';
 } else if (p && p != 'blurgs') {
   page = `contents/${p}.md`;
 } else if (p && p == 'blurgs') {
-  page = `partials/blurgs.md`;
+  page = `contents/partials/blurgs.md`;
   get_blurgs();
 }
 
@@ -109,7 +109,7 @@ if (sessionStorage.getItem('head_content')) {
   var res = JSON.parse(sessionStorage.getItem('head_content'))
   add_head_content(res);
 } else {
-  get_data(`https://raw.githubusercontent.com/${github_username}/blurg/main/partials/header.md`, false)
+  get_data(`https://raw.githubusercontent.com/${github_username}/blurg/main/contents/partials/header.md`, false)
     .then((res) => {
       add_head_content(res);
       sessionStorage.setItem('head_content', JSON.stringify(res));
