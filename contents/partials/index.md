@@ -1,6 +1,6 @@
 # Blurg
 
-A website with editable content using markdown files stored on Github. Pages and partials are stored in the browser session storage for speed and to reduce calls to Github API.
+A website with editable content using markdown files stored on Github. Pages and partials are stored in the browser session storage for speed and to reduce the amount of calls to the Github API.
 
 * * *
 
