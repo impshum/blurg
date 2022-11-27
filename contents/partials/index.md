@@ -1,36 +1,55 @@
-# Index
+# Blurg
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-  printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
-  Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-![](/contents/images/thing.jpg)
+A website with editable content using markdown files stored on Github. Pages and partials are stored in the browser session storage for speed and to reduce calls to Github API.
 
 * * *
 
-### Welcome to Markdown
+### Install Instructions
 
-This turns your input into HTML for the website.
-
-* * *
-
-# h1
-
-## h2
-
-### h3
-
-#### h4
-
-##### h5
+1.  Fork the Blurg repository from Github: <https://github.com/impshum/blurg>
+2.  Edit the config file with your details (`/config.php`).
+3.  Downlaod the source code of your fork and upload to your server.
+4.  Edit the partials (`/contents/partials/header.md` and `/contents/partials/index.md`).
+5.  Start pushing to your repository.
 
 * * *
 
-You can do **strong** and _italic_ text.
+### Config File
 
-And tables...
+-   Config file is located in `/config.php`.
+-   It's a PHP array so be careful when editing. Please follow the example below using exactly the same syntax.
 
-| one | two | three |
-| --- | --- | ----- |
-| one | two | three |
-| one | two | three |
+```
+"url" => "http://localhost:8888",
+"title" => "Blurg",
+"description" => "Blurg",
+"theme" => "auto",
+"github_username" => "impshum",
+"maintenance_mode" => false,
+"preview_password" => "123"
+```
+
+* * *
+
+### Markdown & Image Files
+
+-   These files are used to edit the pages, partials and to manage the images.
+-   Index is the home page `/contents/partials/index.md`.
+-   Put all images to be used in pages in the `/contents/images/` directory.
+
+```
+├── contents
+│   ├── 1-one.md
+│   ├── 2-two.md
+│   ├── 3-three.md
+│   ├── 4-four.md
+│   ├── images
+│   │   ├── favicon.png
+│   │   ├── logo.png
+│   │   ├── social.jpg
+│   │   └── thing.jpg
+│   └── partials
+│       ├── blurgs.md
+│       ├── header.md
+│       └── index.md
+```
