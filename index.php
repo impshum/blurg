@@ -20,24 +20,21 @@ $config = require __DIR__ . "/config.php";
   <meta property="og:type" content="website">
   <meta property="og:url" content="<?php echo $config["url"]; ?>">
   <meta property="og:description" content="<?php echo $config["description"]; ?>">
-  <meta property="og:image" content="<?php echo $config["url"]; ?>/core/img/social.jpg">
+  <meta property="og:image" content="<?php echo $config["url"]; ?>/contents/images/social.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="600">
 
-  <link rel="shortcut icon" type="image/png" href="<?php echo $config["url"]; ?>/core/img/favicon.png">
+  <link rel="shortcut icon" type="image/png" href="<?php echo $config["url"]; ?>/contents/images/favicon.png">
 
   <?php
   $theme = $config["theme"];
   echo "<link rel='stylesheet' href='/core/css/$theme.css'>";
-
   $menu_link_colors = [
     "light" => "#0a0a0a",
     "dark" => "#ffffff",
     "auto" => "inherit"
   ];
-
   $menu_link_color = $menu_link_colors[$config["theme"]];
-
   echo "<style>.title a:hover {color: $menu_link_color !important;}</style>";
   ?>
 
@@ -48,22 +45,18 @@ $config = require __DIR__ . "/config.php";
 
 <body>
 
-  <?php if (!$config["maintainence_mode"] || isset($_GET["preview"]) && $_GET["preview"] == $config["preview_password"]) { ?>
+  <?php if (!$config["maintenance_mode"] || isset($_GET["preview"]) && $_GET["preview"] == $config["preview_password"]) { ?>
     <header id="header" class="container">
       <div class="title">
-        <?php
-        $logos = [
-          "light" => "logo.webp",
-          "dark" => "logo.webp",
-          "auto" => "logo.webp"
-        ];
-        $logo = $logos[$config["theme"]];
-        echo "<img id='logo' class='logo' src='/core/img/logo.png'>";
-        ?>
+        <img id='logo' class='logo' src='/contents/images/logo.png'>
         <div id="head_content"></div>
         <hr>
         <div id="menu_content">
-          <a href="/"><img class='home' src='/core/img/home.png'></a>
+          <?php if (isset($_GET["preview"])) { ?>
+            <a href="/?preview=<?php echo $_GET["preview"]; ?>"><img class='home' src='/core/img/home.webp'></a>
+          <?php  } else { ?>
+            <a href="/"><img class='home' src='/core/img/home.png'></a>
+          <?php  } ?>
         </div>
       </div>
       <div id="clear_session_data"></div>
@@ -83,7 +76,6 @@ $config = require __DIR__ . "/config.php";
       <img src='/core/img/logo.png'>
     </article>
   <?php } ?>
-
 
   <script>
     let github_username = '<?php echo $config["github_username"]; ?>';

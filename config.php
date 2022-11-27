@@ -5,6 +5,6 @@ return [
   "description" => "Blurg",
   "theme" => "auto",
   "github_username" => "impshum",
-  "maintainence_mode" => true,
+  "maintenance_mode" => false,
   "preview_password" => "123"
 ];

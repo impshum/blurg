@@ -15,7 +15,7 @@ A website with editable content using markdown files stored on Github. Pages and
 1.  Fork the Blurg repository from Github: <https://github.com/impshum/blurg>
 2.  Edit the config file with your details (`/config.php`).
 3.  Downlaod the source code of your fork and upload to your server.
-4.  Edit the partials (`/partials/header.md` and `/partials/index.md`).
+4.  Edit the partials (`/contents/partials/header.md` and `/contents/partials/index.md`).
 5.  Start pushing to your repository.
 
 * * *
@@ -28,41 +28,35 @@ A website with editable content using markdown files stored on Github. Pages and
 ```
 "url" => "http://localhost:8888",
 "title" => "Blurg",
-"description" => "A website with editable content using markdown files stored on Github",
-"github_username" => "impshum"
+"description" => "Blurg",
+"theme" => "auto",
+"github_username" => "impshum",
+"maintenance_mode" => false,
+"preview_password" => "123"
 ```
 
 * * *
 
-### Markdown & Page Image Files
+### Markdown & Image Files
 
--   These files are used to edit the pages and partials.
--   Index is the home page `/partials/index.md`.
--   Put all images to be used in pages in the `/images/` directory.
+-   These files are used to edit the pages, partials and to manage the images.
+-   Index is the home page `/contents/partials/index.md`.
+-   Put all images to be used in pages in the `/contents/images/` directory.
 
 ```
+├── config.php
 ├── contents
 │   ├── 1-one.md
 │   ├── 2-two.md
-│   └── 3-three.md
-├── images
-│   └── thing.jpg
-├── partials
-│   ├── header.md
-│   └── index.md
-```
-
-* * *
-
-### Site Image Files
-
-- These files are for the logo, favicon, home and social share images. Edit `favicon.png`, `social.jpg` and `logo.webp` to your liking.
-
-```
-├── assets
-│   ├── img
+│   ├── 3-three.md
+│   ├── 4-four.md
+│   ├── images
 │   │   ├── favicon.png
-│   │   ├── home.webp
-│   │   ├── logo.webp
-│   │   └── social.jpg
+│   │   ├── logo.png
+│   │   ├── social.jpg
+│   │   └── thing.jpg
+│   └── partials
+│       ├── blurgs.md
+│       ├── header.md
+│       └── index.md
 ```
