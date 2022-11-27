@@ -30,12 +30,21 @@ const get_blurgs = () => {
       let node = document.createElement('button');
       node.classList.add('flex');
       node.textContent = 'impshum';
+      node.setAttribute('data-url', 'https://blurg.recycledrobot.co.uk');
       page_content.appendChild(node);
       for (var i = 0; i < res.length; i++) {
         let node = document.createElement('button');
+        node.setAttribute('data-url', res[i].homepage);
         node.classList.add('flex');
         node.textContent = res[i].owner.login;
         page_content.appendChild(node);
+      }
+    }).then(() => {
+      let blurg_buttons = document.querySelectorAll('button.flex');
+      for (var i = 0; i < blurg_buttons.length; i++) {
+        blurg_buttons[i].onclick = (e) => {
+          window.open(e.target.getAttribute('data-url'), '_blank').focus();
+        }
       }
     });
 }
