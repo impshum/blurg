@@ -9,7 +9,8 @@ A website with editable content using markdown files stored on Github. Pages and
 1.  Fork the Blurg repository from Github: <https://github.com/impshum/blurg>
 2.  Edit the config file with your details (`/config.php`).
 3.  Downlaod the source code of your fork and upload to your server.
-4.  Edit the partials (`/contents/partials/header.md` and `/contents/partials/index.md`).
+4.  Edit the partials in `/contents/partials/header.md` and `/contents/partials/index.md`.
+4.  Edit/create the pages `/contents/`.
 5.  Start pushing to your repository.
 
 * * *
