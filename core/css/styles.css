@@ -98,6 +98,15 @@ button.flex {
   width: 100%;
 }
 
+#menu_content {
+  overflow; hidden;
+  width: 100%;
+}
+
+#menu_content a {
+  display: inline-flex;
+}
+
 #edit_button {
   position: absolute;
   top: 6px;
