@@ -87,6 +87,10 @@ img.ad {
   border: 1px solid #526a80;
   border-radius: 5px;
 }
+
+.mt-1 {
+  margin-top: 1rem;
+}
 .is-centered {
   text-align: center;
 }
@@ -110,9 +114,8 @@ button.flex {
 }
 
 #menu_content {
-  overflow;
-  hidden;
-  width: 100%;
+  overflow-x: auto;
+
 }
 
 #menu_content a {

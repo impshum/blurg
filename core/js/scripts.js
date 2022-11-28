@@ -25,29 +25,31 @@ const get_data = async (url, json = true) => {
 }
 
 const get_blurgs = () => {
-  get_data(`https://api.github.com/repos/impshum/blurg/forks`, true)
-    .then((res) => {
-      let node = document.createElement('button');
-      node.classList.add('flex');
-      node.textContent = 'impshum';
-      node.setAttribute('data-url', 'https://blurg.recycledrobot.co.uk');
-      page_content.appendChild(node);
-      for (var i = 0; i < res.length; i++) {
+  window.setTimeout(() => {
+    get_data(`https://api.github.com/repos/impshum/blurg/forks`, true)
+      .then((res) => {
         let node = document.createElement('button');
-        node.setAttribute('data-url', res[i].homepage);
-        node.classList.add('flex');
-        node.textContent = res[i].owner.login;
+        node.classList.add('flex', 'mt-1');
+        node.textContent = 'impshum';
+        node.setAttribute('data-url', 'https://blurg.recycledrobot.co.uk');
         page_content.appendChild(node);
-      }
-    }).then(() => {
-      let blurg_buttons = document.querySelectorAll('button.flex');
-      for (var i = 0; i < blurg_buttons.length; i++) {
-        blurg_buttons[i].onclick = (e) => {
-          console.log(e);
-          window.open(e.target.getAttribute('data-url'), '_blank').focus();
+        for (var i = 0; i < res.length; i++) {
+          let node = document.createElement('button');
+          node.setAttribute('data-url', res[i].homepage);
+          node.classList.add('flex', 'animate__animated', 'animate__fadeIn');
+          node.textContent = res[i].owner.login;
+          page_content.appendChild(node);
         }
-      }
-    });
+      }).then(() => {
+        let blurg_buttons = document.querySelectorAll('button.flex');
+        for (var i = 0; i < blurg_buttons.length; i++) {
+          blurg_buttons[i].onclick = (e) => {
+            console.log(e);
+            window.open(e.target.getAttribute('data-url'), '_blank').focus();
+          }
+        }
+      });
+  }, 200);
 }
 
 if (clear_session_data) {
