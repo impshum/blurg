@@ -41,17 +41,6 @@ $config = require __DIR__ . "/config.php";
   <link rel="stylesheet" href="/core/css/animate.min.css">
   <link rel="stylesheet" href="/core/css/styles.css">
 
-  <?php if ($config["show_ads"]) { ?>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115325087-4"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-115325087-4');
-    </script>
-  <?php } ?>
 </head>
 
 <body>
@@ -81,17 +70,7 @@ $config = require __DIR__ . "/config.php";
 
     <?php if ($config["show_ads"]) { ?>
       <div id="ads" class="container animate__animated animate__fadeIn animate__delay-1s">
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-        <!-- monero -->
-        <ins class="adsbygoogle"
-        		 style="display:block"
-        		 data-ad-client="ca-pub-1625149405778757"
-        		 data-ad-slot="7792710170"
-        		 data-ad-format="auto"></ins>
-        <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+        <img class="ad" src="/contents/images/ad.jpg">
       </div>
     <?php  } ?>
 
