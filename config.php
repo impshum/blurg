@@ -7,5 +7,5 @@ return [
   "github_username" => "impshum",
   "maintenance_mode" => false,
   "preview_password" => "123",
-  "show_ads" => true
+  "show_ads" => false
 ];
