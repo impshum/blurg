@@ -6,6 +6,8 @@ const page_content = document.getElementById('page_content');
 const clear_session_data = document.getElementById('clear_session_data');
 const edit_button = document.getElementById('edit_button');
 
+var converter = new showdown.Converter({metadata: true});
+
 if (!page_content) {
   throw new Error("maintainence mode");
 }
@@ -93,7 +95,7 @@ if (!sessionStorage.getItem('hits')) {
 
 const add_head_content = (res) => {
   let node = document.createElement('div');
-  node.innerHTML = marked.parse(res);
+  node.innerHTML = converter.makeHtml(res);
   head_content.appendChild(node);
 }
 
@@ -118,7 +120,7 @@ const add_menu_content = (res) => {
 
 const add_page_content = (res) => {
   let node = document.createElement('div');
-  node.innerHTML = marked.parse(res);
+  node.innerHTML = converter.makeHtml(res);
   page_content.appendChild(node);
   page_content.parentNode.style.display = 'block'
   page_content.parentNode.classList.add('animate__animated', 'animate__fadeIn', 'animate__fast');
