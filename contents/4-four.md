@@ -1,5 +1,7 @@
 ---
 title: Four
+order: 4
+show_on_menu: 0
 ---
 
 # Four

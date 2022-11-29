@@ -1,5 +1,7 @@
 ---
 title: Three
+order: 3
+show_on_menu: 1
 ---
 
 # Three

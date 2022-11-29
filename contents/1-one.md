@@ -1,5 +1,7 @@
 ---
 title: One
+order: 1
+show_on_menu: 1
 ---
 
 # One

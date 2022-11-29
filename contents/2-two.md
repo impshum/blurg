@@ -1,5 +1,7 @@
 ---
 title: Two
+order: 2
+show_on_menu: 1
 ---
 
 # Two

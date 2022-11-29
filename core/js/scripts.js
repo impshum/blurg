@@ -121,6 +121,8 @@ const add_menu_content = (res) => {
 const add_page_content = (res) => {
   let node = document.createElement('div');
   node.innerHTML = converter.makeHtml(res);
+  var metadata = converter.getMetadata(true);
+  console.log(metadata);
   page_content.appendChild(node);
   page_content.parentNode.style.display = 'block'
   page_content.parentNode.classList.add('animate__animated', 'animate__fadeIn', 'animate__fast');
