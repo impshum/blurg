@@ -121,7 +121,7 @@ const add_menu_content = (res) => {
 const add_page_content = (res) => {
   let node = document.createElement('div');
   node.innerHTML = converter.makeHtml(res);
-  var metadata = converter.getMetadata(true);
+  var metadata = converter.getMetadata();
   console.log(metadata);
   page_content.appendChild(node);
   page_content.parentNode.style.display = 'block'
