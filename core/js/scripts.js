@@ -6,7 +6,12 @@ const page_content = document.getElementById('page_content');
 const clear_session_data = document.getElementById('clear_session_data');
 const edit_button = document.getElementById('edit_button');
 
-var converter = new showdown.Converter({metadata: true});
+var converter = new showdown.Converter({
+  metadata: true,
+  tables: true
+});
+
+converter.setFlavor('github');
 
 if (!page_content) {
   throw new Error("maintainence mode");
@@ -100,29 +105,14 @@ const add_head_content = (res) => {
 }
 
 const add_menu_content = (res) => {
-  for (var i = 0; i < res.length; i++) {
-    if (res[i].name.endsWith('.md')) {
-      let node = document.createElement('a');
-      if (sessionStorage.getItem('hits') == 1) {
-        node.classList.add('animate__animated', 'animate__fadeIn', 'animate__faster', `animate__delay-${i}00s`);
-      }
-      let page_title = res[i].name.replace('.md', '');
-      if (url_params.get('preview')) {
-        node.href = `/?preview=${url_params.get('preview')}&p=${page_title}`;
-      } else {
-        node.href = `/?p=${page_title}`;
-      }
-      node.textContent = page_title.charAt(2).toUpperCase() + page_title.substr(3).toLowerCase();
-      menu_content.appendChild(node);
-    }
-  }
+  let node = document.createElement('div');
+  node.innerHTML = converter.makeHtml(res);
+  head_content.appendChild(node);
 }
 
 const add_page_content = (res) => {
   let node = document.createElement('div');
   node.innerHTML = converter.makeHtml(res);
-  var metadata = converter.getMetadata();
-  console.log(metadata);
   page_content.appendChild(node);
   page_content.parentNode.style.display = 'block'
   page_content.parentNode.classList.add('animate__animated', 'animate__fadeIn', 'animate__fast');
@@ -139,6 +129,17 @@ if (sessionStorage.getItem('head_content')) {
     });
 }
 
+if (sessionStorage.getItem('menu_content')) {
+  var res = JSON.parse(sessionStorage.getItem('menu_content'));
+  add_menu_content(res);
+} else {
+  get_data(`https://raw.githubusercontent.com/${github_username}/blurg/main/contents/partials/menu.md`, false)
+    .then((res) => {
+      add_menu_content(res);
+      sessionStorage.setItem('menu_content', JSON.stringify(res));
+    });
+}
+
 if (sessionStorage.getItem(page)) {
   var res = JSON.parse(sessionStorage.getItem(page));
   add_page_content(res);
@@ -148,16 +149,4 @@ if (sessionStorage.getItem(page)) {
       add_page_content(res);
       sessionStorage.setItem(page, JSON.stringify(res));
     });
-}
-
-if (sessionStorage.getItem('menu_content')) {
-  var res = JSON.parse(sessionStorage.getItem('menu_content'));
-  add_menu_content(res);
-} else {
-  get_data(`https://api.github.com/repos/${github_username}/blurg/contents/contents`)
-    .then((res) => {
-      add_menu_content(res);
-      sessionStorage.setItem('menu_content', JSON.stringify(res));
-    });
-
 }
