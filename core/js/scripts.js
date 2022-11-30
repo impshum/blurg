@@ -107,7 +107,7 @@ const add_head_content = (res) => {
 const add_menu_content = (res) => {
   let node = document.createElement('div');
   node.innerHTML = converter.makeHtml(res);
-  head_content.appendChild(node);
+  menu_content.appendChild(node);
 }
 
 const add_page_content = (res) => {
