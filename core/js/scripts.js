@@ -11,6 +11,28 @@ var converter = new showdown.Converter({
   tables: true
 });
 
+// Extension
+showdown.extension('myext', function() {
+  return [
+    {
+      type: 'listener',
+      listeners: {
+        'hashHTMLBlocks.after': function (event, text, converter, options, globals) {
+        	text = text.replace(/^ {0,3}<[a-z]+\b[^>]*>$/gmi, function (wm) {
+            return '\n\n¨K' + (globals.gHtmlBlocks.push(wm) - 1) + 'K\n\n';
+          });
+          return text;
+				}
+      }
+    }
+  ];
+});
+
+// Test Code
+var converter_p = new showdown.Converter({
+  extensions: ['myext']
+});
+
 converter.setFlavor('github');
 
 if (!page_content) {
@@ -106,7 +128,7 @@ const add_head_content = (res) => {
 
 const add_menu_content = (res) => {
   let node = document.createElement('div');
-  node.innerHTML = converter.makeHtml(res);
+  node.innerHTML = converter_p.makeHtml(res);
   menu_content.appendChild(node);
 }
 

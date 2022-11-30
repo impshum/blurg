@@ -87,8 +87,8 @@ $config = require __DIR__ . "/config.php";
   <script>
     let github_username = '<?php echo $config["github_username"]; ?>';
   </script>
-  
-  <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
+
+  <script src="core/js/showdown.min.js"></script>
   <script src="/core/js/scripts.js"></script>
 </body>
 
