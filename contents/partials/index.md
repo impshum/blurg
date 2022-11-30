@@ -41,7 +41,7 @@ A website with editable content using markdown files stored on Github. Pages and
 ```
 ├── contents
 │   ├── 1-one.md
-│   ├── 2-two.md
+│   ├── 2-two.md
 │   ├── 3-three.md
 │   ├── 4-four.md
 │   ├── images
