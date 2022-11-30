@@ -91,6 +91,7 @@ img.ad {
 .mt-1 {
   margin-top: 1rem;
 }
+
 .is-centered {
   text-align: center;
 }
@@ -115,10 +116,10 @@ button.flex {
 
 #menu_content {
   overflow-x: auto;
-
+  margin-top: -12px;
 }
 
-#menu_content a {
+#menu_content div, #menu_content a {
   display: inline-flex;
 }
 
