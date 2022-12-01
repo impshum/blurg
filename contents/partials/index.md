@@ -21,15 +21,14 @@ A website with editable content using markdown files stored on Github. Pages and
 -   Config file is located in `/config.php`.
 -   It's a PHP array so be careful when editing. Please follow the example below using exactly the same syntax.
 
-```
-"url" => "http://localhost:8888",
-"title" => "Blurg",
-"description" => "Blurg",
-"theme" => "auto",
-"github_username" => "impshum",
-"maintenance_mode" => false,
-"preview_password" => "123"
-```
+
+    "url" => "http://localhost:8888",
+    "title" => "Blurg",
+    "description" => "Blurg",
+    "theme" => "auto",
+    "github_username" => "impshum",
+    "maintenance_mode" => false,
+    "preview_password" => "123"
 
 * * *
 
@@ -38,28 +37,27 @@ A website with editable content using markdown files stored on Github. Pages and
 -   These files are used to edit the pages, partials and to manage the images.
 -   Put all images to be used in pages in the `/contents/images/` directory.
 
-```
-├── config.php
-├── contents
-│   ├── one.md
-│   ├── four.md
-│   └── two.md
-│   ├── three.md
-│   ├── images
-│   │   ├── ad.jpg
-│   │   ├── favicon.png
-│   │   ├── logo.png
-│   │   ├── social.jpg
-│   │   └── thing.jpg
-│   ├── partials
-│   │   ├── blurgs.md
-│   │   ├── header.md
-│   │   ├── index.md
-│   │   └── menu.md
-```
+
+    ├── config.php
+    ├── contents
+    │   ├── one.md
+    │   ├── four.md
+    │   └── two.md
+    │   ├── three.md
+    │   ├── images
+    │   │   ├── ad.jpg
+    │   │   ├── favicon.png
+    │   │   ├── logo.png
+    │   │   ├── social.jpg
+    │   │   └── thing.jpg
+    │   ├── partials
+    │   │   ├── blurgs.md
+    │   │   ├── header.md
+    │   │   ├── index.md
+    │   │   └── menu.md
 
 * * *
 
 ### Why Change The Description & Url?
 
-If you check out https://blurg.recycledrobot.co.uk/?p=blurgs you can find other users websites made with Blurg. Work in progress...
+If you check out <https://blurg.recycledrobot.co.uk/?p=blurgs> you can find other users websites made with Blurg. Work in progress...
