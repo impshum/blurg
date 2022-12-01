@@ -7,7 +7,7 @@ const clear_session_data = document.getElementById('clear_session_data');
 const edit_button = document.getElementById('edit_button');
 
 var converter = new showdown.Converter({
-  metadata: true,
+  metadata: false,
   tables: true
 });
 

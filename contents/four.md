@@ -1,9 +1,3 @@
----
-title: Four
-order: 4
-show_on_menu: 0
----
-
 # Four
 
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
