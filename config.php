@@ -1,6 +1,6 @@
 <?php
 return [
-  "url" => "https://firstbest.city",
+  "url" => "https://localhost:8888",
   "title" => "Blurg",
   "description" => "Blurg",
   "theme" => "auto",

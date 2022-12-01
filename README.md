@@ -10,6 +10,7 @@ A website with editable content using markdown files stored on Github. Pages and
 
 * * *
 
+
 ### Install Instructions
 
 1.  Fork the Blurg repository from Github: <https://github.com/impshum/blurg>
@@ -45,20 +46,23 @@ A website with editable content using markdown files stored on Github. Pages and
 -   Put all images to be used in pages in the `/contents/images/` directory.
 
 ```
+├── config.php
 ├── contents
-│   ├── 1-one.md
-│   ├── 2-two.md
-│   ├── 3-three.md
-│   ├── 4-four.md
+│   ├── one.md
+│   ├── four.md
+│   └── two.md
+│   ├── three.md
 │   ├── images
+│   │   ├── ad.jpg
 │   │   ├── favicon.png
 │   │   ├── logo.png
 │   │   ├── social.jpg
 │   │   └── thing.jpg
-│   └── partials
-│       ├── blurgs.md
-│       ├── header.md
-│       └── index.md
+│   ├── partials
+│   │   ├── blurgs.md
+│   │   ├── header.md
+│   │   ├── index.md
+│   │   └── menu.md
 ```
 
 * * *
