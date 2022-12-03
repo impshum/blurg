@@ -4,6 +4,6 @@
   "description": "Blurg Description",
   "theme": "auto",
   "maintenance_mode": false,
-  "show_house": true,
+  "show_house": false,
   "show_ads": false
 }
