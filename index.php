@@ -80,13 +80,16 @@ $config = json_decode($json);
 
     <div id="main" class="container">
       <article id="page_content"></article>
-      <?php if ($config->show_coffee) { ?>
-        <br><hr>
-        <a class="coffee" href="https://www.buymeacoffee.com/<?php echo $github_username; ?>" target="_blank"><img src="/core/img/coffee.webp" alt="Buy Me A Coffee"></a>
-      <?php } ?>
-
       <button id="edit_button" class="animate__animated animate__fadeIn animate__delay-1s">Edit page</button>
     </div>
+
+    <?php if ($config->show_coffee) { ?>
+      <div class="container">
+        <h2>Buy me a coffee</h2>
+        <p>I made this website to facilitate a high-level discussion on how to make our cities better. As it takes a lot of time and effort to make sure the content is of high quality, a coffee is always appreciated.</p>
+        <a class="coffee" href="https://www.buymeacoffee.com/<?php echo $github_username; ?>" target="_blank"><img src="/core/img/coffee.webp" alt="Buy Me A Coffee"></a>
+      </div>
+    <?php } ?>
 
     <?php if ($config->show_ads) { ?>
       <div id="ads" class="container animate__animated animate__fadeIn animate__delay-1s">

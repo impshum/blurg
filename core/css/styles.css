@@ -21,7 +21,7 @@ html {
 
 @media only screen and (max-width : 768px) {
   .flex-left {
-    width: 0%;
+    width: 0;
   }
 
   .flex-right {
@@ -75,11 +75,11 @@ hr {
 }
 
 .container {
+  position: relative;
   margin: 2rem auto;
   padding: 1rem 3rem 2rem;
   border: 1px solid #526a80;
   border-radius: 5px;
-  position: relative;
 }
 
 .title h2 {
@@ -107,8 +107,8 @@ img.logo {
 }
 
 img.ad {
-  margin-top: 2.4rem;
   width: 100%;
+  margin-top: 2.4rem;
   padding: 2px;
   border: 1px solid #526a80;
   border-radius: 5px;
@@ -131,8 +131,8 @@ img.ad {
 img.home {
   position: relative;
   top: 1px;
-  height: 15px;
   width: 15px;
+  height: 15px;
   margin-right: 2px;
 }
 
@@ -145,16 +145,17 @@ button.flex {
   margin-top: -12px;
 }
 
-#menu_content div, #menu_content a {
+#menu_content div,
+#menu_content a {
   display: inline-flex;
 }
 
 #edit_button {
+  font-size: .7rem;
   position: absolute;
   top: 6px;
-  right: 0px;
+  right: 0;
   padding: .5rem;
-  font-size: .7rem;
 }
 
 #main {
@@ -175,15 +176,15 @@ button.flex {
   right: 3px;
   width: 15px;
   height: 15px;
-  background: transparent;
   transition: background .3s;
   border-radius: 3px;
+  background: transparent;
 }
 
 #clear_session_data:hover {
-  background: rgba(155, 155, 155, 0.2);
-  transition: background .3s;
   cursor: pointer;
+  transition: background .3s;
+  background: rgba(155, 155, 155, .2);
 }
 
 #show_blurgs {
@@ -192,23 +193,26 @@ button.flex {
   left: 3px;
   width: 15px;
   height: 15px;
-  background: transparent;
   transition: background .3s;
   border-radius: 3px;
+  background: transparent;
 }
 
 #show_blurgs:hover {
-  background: rgba(155, 155, 155, 0.2);
-  transition: background .3s;
   cursor: pointer;
+  transition: background .3s;
+  background: rgba(155, 155, 155, .2);
 }
 
 .coffee {
   display: block;
-  margin: 3rem auto 1rem;
   width: 180px;
+  margin: 2rem auto 0rem;
 }
 
+.coffee img {
+  border-radius: 3px;
+}
 .footer {
   font-size: .75rem;
   margin: 4rem auto;
