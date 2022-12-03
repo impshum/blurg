@@ -52,11 +52,16 @@ $config = require __DIR__ . "/config.php";
         <div id="head_content"></div>
         <hr>
         <div id="menu_content">
-          <?php if (isset($_GET["preview"])) { ?>
-            <a href="/?preview=<?php echo $_GET["preview"]; ?>"><img class='home' src='/core/img/home.webp'></a>
-          <?php  } else { ?>
-            <a href="/"><img class='home' src='/core/img/home.png'></a>
-          <?php  } ?>
+
+          <?php
+          if ($config["show_house"]) { ?>
+            <?php if (isset($_GET["preview"])) { ?>
+             <a href="/?preview=<?php echo $_GET["preview"]; ?>"><img class='home' src='/core/img/home.webp'></a>
+           <?php  } else { ?>
+             <a href="/"><img class='home' src='/core/img/home.png'></a>
+           <?php  } ?>  
+          <?php }  ?>
+
         </div>
       </div>
       <div id="clear_session_data"></div>
