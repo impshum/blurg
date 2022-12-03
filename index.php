@@ -86,8 +86,7 @@ $config = json_decode($json);
     </div>
   <?php } else { ?>
     <article class="is-centered"><br><br><br>
-      <h1 class="is-centered">Coming soon</h1><br>
-      <img src='/core/img/logo.png'>
+      <h1 class="is-centered">Coming soon</h1>
     </article>
   <?php } ?>
 
