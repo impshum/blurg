@@ -6,6 +6,20 @@ html {
   font-family: 'Nunito', sans-serif;
 }
 
+hr {
+  width: 70%;
+  position: absolute;
+  right: 3rem;
+}
+
+@media only screen and (max-width : 768px) {
+  hr {
+    width: 80%;
+    position: absolute;
+    right: 10%;
+  }
+}
+
 .animate__delay-05s {
   -webkit-animation-delay: .3s;
   animation-delay: .3s;
@@ -116,7 +130,7 @@ button.flex {
 
 #menu_content {
   overflow-x: auto;
-  margin-top: -12px;
+  margin-top: 1.5rem;
 }
 
 #menu_content div, #menu_content a {
