@@ -1,12 +1,9 @@
 <?php
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, "https://raw.githubusercontent.com/impshum/blurg/main/config.php");
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-$config = curl_exec($ch);
-curl_close($ch);
+$github_username = "impshum";
 
-echo $config;
+$json = file_get_contents("https://raw.githubusercontent.com/$github_username/blurg/main/config.json");
+$config = json_decode($json);
+
 #$config = include file_get_contents("https://raw.githubusercontent.com/impshum/blurg/main/config.php");
 ?>
 <!doctype html>
