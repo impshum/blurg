@@ -3,7 +3,7 @@
   "title": "Blurg",
   "description": "Blurg",
   "theme": "auto",
-  "maintenance_mode": false,
+  "maintenance_mode": true,
   "show_house": true,
   "show_ads": false
 }
