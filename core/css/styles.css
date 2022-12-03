@@ -131,6 +131,14 @@ button.flex {
 #menu_content {
   overflow-x: auto;
   margin-top: 1.5rem;
+  position: relative;
+  left: 150px;
+}
+
+@media only screen and (max-width : 768px) {
+  #menu_content {
+    left: 0px;
+  }
 }
 
 #menu_content div, #menu_content a {
