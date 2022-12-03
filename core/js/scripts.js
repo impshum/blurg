@@ -11,24 +11,20 @@ var converter = new showdown.Converter({
   tables: true
 });
 
-// Extension
 showdown.extension('myext', function() {
-  return [
-    {
-      type: 'listener',
-      listeners: {
-        'hashHTMLBlocks.after': function (event, text, converter, options, globals) {
-        	text = text.replace(/^ {0,3}<[a-z]+\b[^>]*>$/gmi, function (wm) {
-            return '\n\n¨K' + (globals.gHtmlBlocks.push(wm) - 1) + 'K\n\n';
-          });
-          return text;
-				}
+  return [{
+    type: 'listener',
+    listeners: {
+      'hashHTMLBlocks.after': function(event, text, converter, options, globals) {
+        text = text.replace(/^ {0,3}<[a-z]+\b[^>]*>$/gmi, function(wm) {
+          return '\n\n¨K' + (globals.gHtmlBlocks.push(wm) - 1) + 'K\n\n';
+        });
+        return text;
       }
     }
-  ];
+  }];
 });
 
-// Test Code
 var converter_p = new showdown.Converter({
   extensions: ['myext']
 });
@@ -114,7 +110,7 @@ if (p != 'index' && p != 'blurg') {
 
 if (!sessionStorage.getItem('hits')) {
   sessionStorage.setItem('hits', 1);
-  head_content.parentNode.parentNode.classList.add('animate__animated', 'animate__fadeInDown');
+  header.classList.add('animate__animated', 'animate__fadeInDown', 'animate__faster');
   logo.classList.add('animate__animated', 'animate__fadeIn', 'animate__delay-05s');
 } else {
   sessionStorage.setItem('hits', parseInt(sessionStorage.getItem('hits')) + 1);

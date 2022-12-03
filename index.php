@@ -49,23 +49,31 @@ $config = json_decode($json);
 
   <?php if (!$config->maintenance_mode || isset($_GET["preview"]) && $_GET["preview"] == $main_config["preview_password"]) { ?>
     <header id="header" class="container">
-      <div class="title">
-        <img id='logo' class='logo' src='/core/img/logo.png'>
-        <div id="head_content"></div>
-        <hr>
-        <div id="menu_content">
+      <div class="flex-container">
+          <div class="flex-left">
+              <img id='logo' class='logo' src='/core/img/logo.png'>
+          </div>
+          <div class="flex-right">
+            <div class="title">
 
-          <?php
-          if ($config->show_house) { ?>
-            <?php if (isset($_GET["preview"])) { ?>
-             <a href="/?preview=<?php echo $_GET["preview"]; ?>"><img class='home' src='/core/img/home.webp'></a>
-           <?php  } else { ?>
-             <a href="/"><img class='home' src='/core/img/home.png'></a>
-           <?php  } ?>
-          <?php }  ?>
+              <div id="head_content"></div>
+              <hr>
+              <div id="menu_content">
 
-        </div>
+                <?php
+                if ($config->show_house) { ?>
+                  <?php if (isset($_GET["preview"])) { ?>
+                   <a href="/?preview=<?php echo $_GET["preview"]; ?>"><img class='home' src='/core/img/home.webp'></a>
+                 <?php  } else { ?>
+                   <a href="/"><img class='home' src='/core/img/home.png'></a>
+                 <?php  } ?>
+                <?php }  ?>
+
+              </div>
+            </div>
+          </div>
       </div>
+
       <div id="clear_session_data"></div>
       <a href="/?p=blurgs" id="show_blurgs"></a>
     </header>

@@ -6,18 +6,32 @@ html {
   font-family: 'Nunito', sans-serif;
 }
 
-hr {
-  width: 70%;
-  position: absolute;
-  right: 3rem;
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-left {
+  width: 25%;
+}
+
+.flex-right {
+  width: 75%;
 }
 
 @media only screen and (max-width : 768px) {
-  hr {
-    width: 80%;
-    position: absolute;
-    right: 10%;
+  .flex-left {
+    width: 0%;
   }
+
+  .flex-right {
+    width: 100%;
+  }
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: .5rem;
 }
 
 .animate__delay-05s {
@@ -70,7 +84,7 @@ hr {
 
 .title h2 {
   font-size: 1.2rem;
-  margin-top: -.75rem;
+  margin-top: -.5rem;
 }
 
 .title a {
@@ -82,10 +96,8 @@ hr {
 
 img.logo {
   float: left;
-  width: 100px;
-  height: 100px;
-  padding-top: 15px;
-  padding-right: 50px;
+  width: 70%;
+  padding-top: 30px;
 }
 
 @media only screen and (max-width : 768px) {
@@ -130,15 +142,7 @@ button.flex {
 
 #menu_content {
   overflow-x: auto;
-  margin-top: 1.5rem;
-  position: relative;
-  left: 150px;
-}
-
-@media only screen and (max-width : 768px) {
-  #menu_content {
-    left: 0px;
-  }
+  margin-top: -12px;
 }
 
 #menu_content div, #menu_content a {
