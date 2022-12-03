@@ -50,7 +50,7 @@ $config = json_decode($json);
   <?php if (!$config->maintenance_mode || isset($_GET["preview"]) && $_GET["preview"] == $main_config["preview_password"]) { ?>
     <header id="header" class="container">
       <div class="title">
-        <img id='logo' class='logo' src='/contents/images/logo.png'>
+        <img id='logo' class='logo' src='/core/img/logo.png'>
         <div id="head_content"></div>
         <hr>
         <div id="menu_content">
