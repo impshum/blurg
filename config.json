@@ -2,6 +2,7 @@
   "url": "https://blurg.recycledrobot.co.uk",
   "title": "Blurg",
   "description": "Blurg Description",
+  "short_description": "Blurg Description",
   "theme": "dark",
   "maintenance_mode": false,
   "show_house": true,

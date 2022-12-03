@@ -3,6 +3,11 @@ $main_config = require __DIR__ . "/config.php";
 $github_username = $main_config["github_username"];
 $json = file_get_contents("https://raw.githubusercontent.com/$github_username/blurg/main/config.json");
 $config = json_decode($json);
+
+$page_title_plus = " | " . ucwords($config->short_description );
+if (isset($_GET["p"])) {
+  $page_title_plus = " | " . ucwords(str_replace("-", " ", $_GET["p"]));
+}
 ?>
 <!doctype html>
 
@@ -12,7 +17,7 @@ $config = json_decode($json);
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title><?php echo $config->title; ?></title>
+  <title><?php echo $config->title; echo $page_title_plus;?></title>
   <meta name="description" content="<?php echo $config->description; ?>">
 
   <meta name="theme-color" content="#202b39">
@@ -84,19 +89,19 @@ $config = json_decode($json);
     </div>
 
     <?php if ($config->show_coffee) { ?>
-      <div class="container">
+      <div class="container animate__animated animate__fadeIn animate__delay-1s">
         <article id="coffee_content"></article>
         <a class="coffee" href="https://www.buymeacoffee.com/<?php echo $github_username; ?>" target="_blank"><img src="/core/img/coffee.webp" alt="Buy Me A Coffee"></a>
       </div>
     <?php } ?>
 
     <?php if ($config->show_ads) { ?>
-      <div id="ads" class="container animate__animated animate__fadeIn animate__delay-1s">
+      <div id="ads" class="container animate__animated animate__fadeIn animate__faster animate__delay-1s">
         <img class="ad" src="/contents/images/ad.jpg">
       </div>
     <?php  } ?>
 
-    <div id="footer" class="footer animate__animated animate__fadeIn animate__faster animate__delay-1s">
+    <div id="footer" class="footer animate__animated animate__fadeIn animate__faster animate__delay-2s">
       Made by <a href="https://recycledrobot.co.uk">Recycled Robot</a> with a keyboard<br>
     </div>
   <?php } else { ?>
