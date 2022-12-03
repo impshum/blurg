@@ -1,6 +1,13 @@
-
 <?php
-$config = require __DIR__ . "/config.php";
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, "https://raw.githubusercontent.com/impshum/blurg/main/config.php");
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+$config = curl_exec($ch);
+curl_close($ch);
+
+echo $config;
+#$config = include file_get_contents("https://raw.githubusercontent.com/impshum/blurg/main/config.php");
 ?>
 <!doctype html>
 
@@ -59,7 +66,7 @@ $config = require __DIR__ . "/config.php";
              <a href="/?preview=<?php echo $_GET["preview"]; ?>"><img class='home' src='/core/img/home.webp'></a>
            <?php  } else { ?>
              <a href="/"><img class='home' src='/core/img/home.png'></a>
-           <?php  } ?>  
+           <?php  } ?>
           <?php }  ?>
 
         </div>
