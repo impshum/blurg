@@ -1,10 +1,8 @@
 <?php
-$github_username = "impshum";
-
+$main_config = require __DIR__ . "/config.php";
+$github_username = $main_config["github_username"];
 $json = file_get_contents("https://raw.githubusercontent.com/$github_username/blurg/main/config.json");
 $config = json_decode($json);
-
-#$config = include file_get_contents("https://raw.githubusercontent.com/impshum/blurg/main/config.php");
 ?>
 <!doctype html>
 
@@ -14,31 +12,31 @@ $config = json_decode($json);
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title><?php echo $config["title"]; ?></title>
-  <meta name="description" content="<?php echo $config["description"]; ?>">
+  <title><?php echo $config->title; ?></title>
+  <meta name="description" content="<?php echo $config->description; ?>">
 
   <meta name="theme-color" content="#202b39">
   <meta name="robots" content="index, nofollow">
 
-  <meta property="og:title" content="<?php echo $config["title"]; ?>">
+  <meta property="og:title" content="<?php echo $config->title; ?>">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="<?php echo $config["url"]; ?>">
-  <meta property="og:description" content="<?php echo $config["description"]; ?>">
-  <meta property="og:image" content="<?php echo $config["url"]; ?>/contents/images/social.jpg">
+  <meta property="og:url" content="<?php echo $config->url; ?>">
+  <meta property="og:description" content="<?php echo $config->description; ?>">
+  <meta property="og:image" content="<?php echo $config->url; ?>/contents/images/social.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="600">
 
-  <link rel="shortcut icon" type="image/png" href="<?php echo $config["url"]; ?>/contents/images/favicon.png">
+  <link rel="shortcut icon" type="image/png" href="<?php echo $config->url; ?>/contents/images/favicon.png">
 
   <?php
-  $theme = $config["theme"];
+  $theme = $config->theme;
   echo "<link rel='stylesheet' href='/core/css/$theme.css'>";
   $menu_link_colors = [
     "light" => "#0a0a0a",
     "dark" => "#ffffff",
     "auto" => "inherit"
   ];
-  $menu_link_color = $menu_link_colors[$config["theme"]];
+  $menu_link_color = $menu_link_colors[$config->theme];
   echo "<style>.title a:hover {color: $menu_link_color !important;}</style>";
   ?>
 
@@ -49,7 +47,7 @@ $config = json_decode($json);
 
 <body>
 
-  <?php if (!$config["maintenance_mode"] || isset($_GET["preview"]) && $_GET["preview"] == $config["preview_password"]) { ?>
+  <?php if (!$config->maintenance_mode || isset($_GET["preview"]) && $_GET["preview"] == $main_config["preview_password"]) { ?>
     <header id="header" class="container">
       <div class="title">
         <img id='logo' class='logo' src='/contents/images/logo.png'>
@@ -58,7 +56,7 @@ $config = json_decode($json);
         <div id="menu_content">
 
           <?php
-          if ($config["show_house"]) { ?>
+          if ($config->show_house) { ?>
             <?php if (isset($_GET["preview"])) { ?>
              <a href="/?preview=<?php echo $_GET["preview"]; ?>"><img class='home' src='/core/img/home.webp'></a>
            <?php  } else { ?>
@@ -77,7 +75,7 @@ $config = json_decode($json);
       <button id="edit_button" class="animate__animated animate__fadeIn animate__delay-1s">Edit page</button>
     </div>
 
-    <?php if ($config["show_ads"]) { ?>
+    <?php if ($config->show_ads) { ?>
       <div id="ads" class="container animate__animated animate__fadeIn animate__delay-1s">
         <img class="ad" src="/contents/images/ad.jpg">
       </div>
@@ -94,7 +92,7 @@ $config = json_decode($json);
   <?php } ?>
 
   <script>
-    let github_username = '<?php echo $config["github_username"]; ?>';
+    let github_username = '<?php echo $github_username; ?>';
   </script>
 
   <script src="core/js/showdown.min.js"></script>
