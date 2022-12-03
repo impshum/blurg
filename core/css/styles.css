@@ -87,13 +87,6 @@ hr {
   margin-top: -.5rem;
 }
 
-.title a {
-  font-size: 1.2rem;
-  margin-right: 7px;
-  transition: color: .3s;
-  color: inherit;
-}
-
 img.logo {
   float: left;
   width: 70%;
@@ -120,6 +113,13 @@ img.ad {
 
 .is-centered {
   text-align: center;
+}
+
+.title a {
+  font-size: 1.2rem;
+  margin-right: .75rem;
+  transition: color: .3s;
+  color: inherit;
 }
 
 .title a:hover {
@@ -213,6 +213,7 @@ button.flex {
 .coffee img {
   border-radius: 3px;
 }
+
 .footer {
   font-size: .75rem;
   margin: 4rem auto;
