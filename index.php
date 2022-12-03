@@ -22,7 +22,7 @@ $config = json_decode($json);
   <meta property="og:type" content="website">
   <meta property="og:url" content="<?php echo $config->url; ?>">
   <meta property="og:description" content="<?php echo $config->description; ?>">
-  <meta property="og:image" content="<?php echo $config->url; ?>/contents/images/social.jpg">
+  <meta property="og:image" content="<?php echo $config->url; ?>/core/img/social.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="600">
 
@@ -80,6 +80,11 @@ $config = json_decode($json);
 
     <div id="main" class="container">
       <article id="page_content"></article>
+      <?php if ($config->show_coffee) { ?>
+        <br><hr>
+        <a class="coffee" href="https://www.buymeacoffee.com/<?php echo $github_username; ?>" target="_blank"><img src="/core/img/coffee.webp" alt="Buy Me A Coffee"></a>
+      <?php } ?>
+
       <button id="edit_button" class="animate__animated animate__fadeIn animate__delay-1s">Edit page</button>
     </div>
 

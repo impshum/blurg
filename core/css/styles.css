@@ -163,6 +163,7 @@ button.flex {
 
 #page_content img {
   width: 100%;
+  min-height: 100px;
   padding: 2px;
   border: 1px solid #526a80;
   border-radius: 5px;
@@ -200,6 +201,12 @@ button.flex {
   background: rgba(155, 155, 155, 0.2);
   transition: background .3s;
   cursor: pointer;
+}
+
+.coffee {
+  display: block;
+  margin: 3rem auto 1rem;
+  width: 180px;
 }
 
 .footer {

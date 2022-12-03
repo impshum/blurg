@@ -5,5 +5,6 @@
   "theme": "dark",
   "maintenance_mode": false,
   "show_house": true,
+  "show_coffee": true,
   "show_ads": false
 }
