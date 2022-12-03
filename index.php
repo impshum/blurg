@@ -4,10 +4,18 @@ $github_username = $main_config["github_username"];
 $json = file_get_contents("https://raw.githubusercontent.com/$github_username/blurg/main/config.json");
 $config = json_decode($json);
 
-$page_title_plus = " | " . ucwords($config->short_description );
+$page_title_plus = " | " . ucwords($config->short_description);
 if (isset($_GET["p"])) {
   $page_title_plus = " | " . ucwords(str_replace("-", " ", $_GET["p"]));
 }
+
+if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')    {
+  $current_url = "https://";
+} else  {
+  $current_url = "http://";
+}
+$current_url.= $_SERVER['HTTP_HOST'];
+$current_url.= $_SERVER['REQUEST_URI'];
 ?>
 <!doctype html>
 
@@ -48,6 +56,14 @@ if (isset($_GET["p"])) {
   <link rel="stylesheet" href="/core/css/animate.min.css">
   <link rel="stylesheet" href="/core/css/styles.css">
 
+  <script type='application/ld+json'>
+  {
+    "@context": "http://www.schema.org",
+    "@type": "WebSite",
+    "name": "<?php echo $config->title; echo $page_title_plus;?>",
+    "url": "<?php echo $current_url; ?>"
+  }
+   </script>
 </head>
 
 <body>
@@ -56,7 +72,7 @@ if (isset($_GET["p"])) {
     <header id="header" class="container">
       <div class="flex-container">
           <div class="flex-left">
-              <img id='logo' class='logo' src='/core/img/logo.png'>
+              <img id='logo' class='logo' src='/core/img/logo.png' alt="<?php echo $config->title; ?>">
           </div>
           <div class="flex-right">
             <div class="title">
@@ -68,9 +84,9 @@ if (isset($_GET["p"])) {
                 <?php
                 if ($config->show_house) { ?>
                   <?php if (isset($_GET["preview"])) { ?>
-                   <a href="/?preview=<?php echo $_GET["preview"]; ?>"><img class='home' src='/core/img/home.webp'></a>
+                   <a href="/?preview=<?php echo $_GET["preview"]; ?>"><img class='home' src='/core/img/home.webp' alt="home"></a>
                  <?php  } else { ?>
-                   <a href="/"><img class='home' src='/core/img/home.png'></a>
+                   <a href="/"><img class='home' src='/core/img/home.png' alt='home'></a>
                  <?php  } ?>
                 <?php }  ?>
 
@@ -97,7 +113,7 @@ if (isset($_GET["p"])) {
 
     <?php if ($config->show_ads) { ?>
       <div id="ads" class="container animate__animated animate__fadeIn animate__faster animate__delay-1s">
-        <img class="ad" src="/contents/images/ad.jpg">
+        <img class="ad" src="/core/img/ad.jpg" alt="ad">
       </div>
     <?php  } ?>
 
