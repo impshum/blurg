@@ -26,7 +26,7 @@ $config = json_decode($json);
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="600">
 
-  <link rel="shortcut icon" type="image/png" href="<?php echo $config->url; ?>/contents/images/favicon.png">
+  <link rel="shortcut icon" type="image/png" href="<?php echo $config->url; ?>/core/img/favicon.png">
 
   <?php
   $theme = $config->theme;
