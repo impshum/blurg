@@ -85,8 +85,7 @@ $config = json_decode($json);
 
     <?php if ($config->show_coffee) { ?>
       <div class="container">
-        <h2>Buy me a coffee</h2>
-        <p>I made this website to facilitate a high-level discussion on how to make our cities better. As it takes a lot of time and effort to make sure the content is of high quality, a coffee is always appreciated.</p>
+        <article id="coffee_content"></article>
         <a class="coffee" href="https://www.buymeacoffee.com/<?php echo $github_username; ?>" target="_blank"><img src="/core/img/coffee.webp" alt="Buy Me A Coffee"></a>
       </div>
     <?php } ?>
