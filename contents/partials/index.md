@@ -21,9 +21,10 @@ A website with editable content using markdown files stored on Github. Pages and
 
 -   Config file is located in `/config.php`.
 
-
-    "github_username" => "impshum",
-    "preview_password" => "123"
+```
+"github_username" => "impshum",
+"preview_password" => "123"
+```
 
 * * *
 
@@ -31,16 +32,17 @@ A website with editable content using markdown files stored on Github. Pages and
 
 -   Config file is located in `/config.json`.
 
-
-    "url": "https://blurg.recycledrobot.co.uk",
-    "title": "Blurg",
-    "description": "A Beautiful Long Description",
-    "short_description": "Something",
-    "theme": "dark",
-    "maintenance_mode": false,
-    "show_house": true,
-    "show_coffee": true,
-    "show_ads": true
+```
+"url": "https://blurg.recycledrobot.co.uk",
+"title": "Blurg",
+"description": "A Beautiful Long Description",
+"short_description": "Something",
+"theme": "dark",
+"maintenance_mode": false,
+"show_house": true,
+"show_coffee": true,
+"show_ads": true
+```
 
 * * *
 
