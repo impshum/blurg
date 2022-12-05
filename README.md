@@ -55,20 +55,19 @@ A website with editable content using markdown files stored on Github. Pages and
 -   These files are used to edit the pages, partials and to manage the images.
 -   Put all images to be used in pages in the `/contents/images/` directory.
 
-
     ├── contents
-    │   ├── images
-    │   │   └── thing.jpg
-    │   ├── partials
-    │   │   ├── blurgs.md
-    │   │   ├── coffee.md
-    │   │   ├── header.md
-    │   │   ├── index.md
-    │   │   └── menu.md
-    │   ├── one.md
-    │   ├── two.md
-    │   ├── three.md
-    │   └── four.md
+    │├── images
+    ││└── thing.jpg
+    │├── partials
+    ││├── blurgs.md
+    ││├── coffee.md
+    ││├── header.md
+    ││├── index.md
+    ││└── menu.md
+    │├── one.md
+    │├── two.md
+    │├── three.md
+    │└── four.md
 
 * * *
 
