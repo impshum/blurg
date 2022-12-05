@@ -15,27 +15,40 @@ A website with editable content using markdown files stored on Github. Pages and
 
 1.  Fork the Blurg repository from Github: <https://github.com/impshum/blurg>
 2.  Change the description and website of your forked repo to your website title and url (more info below).
-3.  Edit the config file with your details (`/config.php`).
+3.  Edit the php config file with your details (`/config.php`).
+3.  Edit the json config file with your details (`/config.json`).
 4.  Download the source code of your fork and upload to your server.
-5.  Edit the partials in `/contents/partials/header.md` and `/contents/partials/index.md`.
+5.  Edit the partials in `/contents/partials/`.
 6.  Edit/create the pages `/contents/`.
 7.  Start pushing to your repository.
 
 * * *
 
-### Config File
+### PHP Config File
 
 -   Config file is located in `/config.php`.
--   It's a PHP array so be careful when editing. Please follow the example below using exactly the same syntax.
 
 ```
-"url" => "http://localhost:8888",
-"title" => "Blurg",
-"description" => "Blurg",
-"theme" => "auto",
 "github_username" => "impshum",
-"maintenance_mode" => false,
 "preview_password" => "123"
+```
+
+* * *
+
+### JSON Config File
+
+-   Config file is located in `/config.json`.
+
+```
+"url": "https://blurg.recycledrobot.co.uk",
+"title": "Blurg",
+"description": "A Beautiful Long Description",
+"short_description": "Something",
+"theme": "dark",
+"maintenance_mode": false,
+"show_house": true,
+"show_coffee": true,
+"show_ads": true
 ```
 
 * * *
@@ -46,23 +59,20 @@ A website with editable content using markdown files stored on Github. Pages and
 -   Put all images to be used in pages in the `/contents/images/` directory.
 
 ```
-├── config.php
 ├── contents
-│   ├── one.md
-│   ├── four.md
-│   └── two.md
-│   ├── three.md
 │   ├── images
-│   │   ├── ad.jpg
-│   │   ├── favicon.png
-│   │   ├── logo.png
-│   │   ├── social.jpg
 │   │   └── thing.jpg
 │   ├── partials
 │   │   ├── blurgs.md
+│   │   ├── coffee.md
 │   │   ├── header.md
 │   │   ├── index.md
 │   │   └── menu.md
+│   ├── one.md
+│   ├── two.md
+│   ├── three.md
+│   └── four.md
+
 ```
 
 * * *
