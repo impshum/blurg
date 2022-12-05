@@ -57,18 +57,18 @@ A website with editable content using markdown files stored on Github. Pages and
 
 ```
 ├── contents
-│├── images
-││└── thing.jpg
-│├── partials
-││├── blurgs.md
-││├── coffee.md
-││├── header.md
-││├── index.md
-││└── menu.md
-│├── one.md
-│├── two.md
-│├── three.md
-│└── four.md
+│   ├── images
+│   │   └── thing.jpg
+│   ├── partials
+│   │   ├── blurgs.md
+│   │   ├── coffee.md
+│   │   ├── header.md
+│   │   ├── index.md
+│   │   └── menu.md
+│   ├── one.md
+│   ├── two.md
+│   ├── three.md
+│   └── four.md
 ```
 
 * * *

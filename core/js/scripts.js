@@ -7,9 +7,30 @@ const coffee_content = document.getElementById('coffee_content');
 const clear_session_data = document.getElementById('clear_session_data');
 const edit_button = document.getElementById('edit_button');
 
-var converter = new showdown.Converter({
-  metadata: false,
-  tables: true
+showdown.extension('codehighlight', function() {
+  function htmlunencode(text) {
+    return (
+      text
+      .replace(/&amp;/g, '&')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+    );
+  }
+  return [{
+    type: 'output',
+    filter: function(text, converter, options) {
+      // use new shodown's regexp engine to conditionally parse codeblocks
+      var left = '<pre><code\\b[^>]*>',
+        right = '</code></pre>',
+        flags = 'g',
+        replacement = function(wholeMatch, match, left, right) {
+          // unescape match to prevent double escaping
+          match = htmlunencode(match);
+          return left + hljs.highlightAuto(match).value + right;
+        };
+      return showdown.helper.replaceRecursiveRegExp(text, replacement, left, right, flags);
+    }
+  }];
 });
 
 showdown.extension('remove_p', function() {
@@ -24,6 +45,12 @@ showdown.extension('remove_p', function() {
       }
     }
   }];
+});
+
+var converter = new showdown.Converter({
+  metadata: false,
+  tables: true,
+  extensions: ['remove_p','codehighlight']
 });
 
 var converter_p = new showdown.Converter({

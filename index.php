@@ -42,6 +42,7 @@ $current_url.= $_SERVER['REQUEST_URI'];
 
   <link rel="shortcut icon" type="image/png" href="<?php echo $config->url; ?>/core/img/favicon.png">
 
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
   <?php
   $theme = $config->theme;
   echo "<link rel='stylesheet' href='/core/css/$theme.css'>";
@@ -131,6 +132,7 @@ $current_url.= $_SERVER['REQUEST_URI'];
     let github_username = '<?php echo $github_username; ?>';
   </script>
 
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
   <script src="core/js/showdown.min.js"></script>
   <script src="/core/js/scripts.js"></script>
 </body>
