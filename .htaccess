@@ -4,6 +4,7 @@ RewriteEngine On
 #RewriteCond %{REQUEST_FILENAME} !-f
 #RewriteRule ^([^\.]+)$ $1.php [NC,L]
 
+RewriteRule ^([0-9]+) /?p=$1 [QSA,L]
 
 #RewriteCond %{HTTPS} off
 #RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]

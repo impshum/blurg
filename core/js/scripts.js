@@ -12,7 +12,7 @@ var converter = new showdown.Converter({
   tables: true
 });
 
-showdown.extension('myext', function() {
+showdown.extension('remove_p', function() {
   return [{
     type: 'listener',
     listeners: {
@@ -27,7 +27,7 @@ showdown.extension('myext', function() {
 });
 
 var converter_p = new showdown.Converter({
-  extensions: ['myext']
+  extensions: ['remove_p']
 });
 
 converter.setFlavor('github');
