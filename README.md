@@ -16,7 +16,7 @@ A website with editable content using markdown files stored on Github. Pages and
 2.  Change the description and website of your forked repo to your website title and url (more info below).
 3.  Edit the php config file with your details (`/config.php`).
 4.  Edit the json config file with your details (`/config.json`).
-5.  Download the source code of your fork and upload to your server.
+5.  Upload `/core`, `config.php`, `index.php` and `.htaccess` to your server.
 6.  Edit the partials in `/contents/partials/`.
 7.  Edit/create the pages `/contents/`.
 8.  Start pushing to your repository.
