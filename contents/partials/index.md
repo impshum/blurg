@@ -7,7 +7,7 @@ A website with editable content using markdown files stored on Github. Pages and
 ### Install Instructions
 
 1.  Fork the Blurg repository from Github: <https://github.com/impshum/blurg>
-2.  Change the description and website of your forked repo to your website title and url (more info below).
+2.  Change the description and website of your forked repo to your website title and url.
 3.  Edit the php config file with your details (`/config.php`).
 4.  Edit the json config file with your details (`/config.json`).
 5.  Upload `/core`, `config.php`, `index.php` and `.htaccess` to your server.
