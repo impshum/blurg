@@ -1,6 +1,7 @@
 <?php
 $main_config = require __DIR__ . "/config.php";
 $github_username = $main_config["github_username"];
+$buymeacoffee_username = $main_config["buymeacoffee_username"];
 $json = file_get_contents("https://raw.githubusercontent.com/$github_username/blurg/main/config.json");
 $config = json_decode($json);
 
@@ -107,7 +108,7 @@ $current_url.= $_SERVER['REQUEST_URI'];
     <?php if ($config->show_coffee) { ?>
       <div class="container animate__animated animate__fadeIn animate__delay-1s">
         <article id="coffee_content"></article>
-        <a class="coffee" href="https://www.buymeacoffee.com/<?php echo $github_username; ?>" target="_blank"><img src="/core/img/coffee.webp" alt="Buy Me A Coffee"></a>
+        <a class="coffee" href="https://www.buymeacoffee.com/<?php echo $buymeacoffee_username; ?>" target="_blank"><img src="/core/img/coffee.webp" alt="Buy Me A Coffee"></a>
       </div>
     <?php } ?>
 
