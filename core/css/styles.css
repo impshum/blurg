@@ -149,6 +149,11 @@ button.flex {
   display: inline-flex;
 }
 
+#menu_content a:not(:last-child):after {
+  content: '|';
+  margin-left: 6px;
+}
+
 #edit_button {
   font-size: .7rem;
   position: absolute;
