@@ -26,6 +26,6 @@ This turns your input into HTML for the website.
 
 * * *
 
-### <a name="anchor"></a> Anchor
+### Anchor
 
 Stuff here.
