@@ -26,11 +26,6 @@ This turns your input into HTML for the website.
 
 * * *
 
-You can do **strong** and _italic_ text.
+### <a name="anchor"></a> Anchor
 
-And tables...
-
-| one | two | three |
-| --- | --- | ----- |
-| one | two | three |
-| one | two | three |
+Stuff here.
