@@ -182,7 +182,7 @@ button.flex {
 
 #page_content img[alt=half] {
   width: 48%;
-  margin: 5px;
+  margin: 4px;
 }
 
 @media only screen and (max-width : 768px) {
