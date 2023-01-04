@@ -169,6 +169,23 @@ button.flex {
   border-radius: 5px;
 }
 
+#page_content img[alt=left] {
+  width: 50%;
+  float: left;
+  margin: 0rem 1rem 1rem 0rem;
+}
+
+#page_content img[alt=right] {
+  width: 50%;
+  float: right;
+  margin: 0rem 0rem 1rem 1rem;
+}
+
+#page_content img[alt=grid] {
+  width: 33%;
+  padding: .3rem .5rem;
+}
+
 #clear_session_data {
   position: absolute;
   top: 3px;
