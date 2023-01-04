@@ -170,7 +170,13 @@ button.flex {
 }
 
 #page_content img[alt=third] {
-  width: 33%;
+  width: 32%;
+}
+
+@media only screen and (max-width : 768px) {
+  #page_content img[alt=third] {
+    width: 100%;
+  }
 }
 
 #clear_session_data {
