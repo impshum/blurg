@@ -169,19 +169,8 @@ button.flex {
   border-radius: 5px;
 }
 
-#page_content img[alt=left] {
-  width: calc(50% - 8px);
-  float: left;
-}
-
-#page_content img[alt=right] {
-  width: calc(50% - 8px);
-  float: right;
-}
-
-#page_content img[alt=grid] {
+#page_content img[alt=third] {
   width: 33%;
-  padding: .3rem .5rem;
 }
 
 #clear_session_data {
