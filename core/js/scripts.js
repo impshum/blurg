@@ -7,10 +7,6 @@ const coffee_content = document.getElementById('coffee_content');
 const clear_session_data = document.getElementById('clear_session_data');
 const edit_button = document.getElementById('edit_button');
 
-var converter = new showdown.Converter({
-  metadata: false,
-  tables: true
-});
 
 showdown.extension('remove_p', function() {
   return [{
@@ -24,6 +20,29 @@ showdown.extension('remove_p', function() {
       }
     }
   }];
+});
+
+showdown.extension("remove-p-from-img", function () {
+  return [
+    {
+      type: "output",
+      filter: function (text) {
+        text = text.replace(
+          // match all <p>'s before and after an <img> tag
+          /(<\/?p[^>]*>)(?=<img.+>)|(<\/?p[^>]*>)(?<=<img.+>)/g,
+          ""
+        );
+
+        return text;
+      },
+    },
+  ];
+});
+
+var converter = new showdown.Converter({
+  metadata: false,
+  tables: true,
+  extensions: ["remove-p-from-img"]
 });
 
 var converter_p = new showdown.Converter({
@@ -141,18 +160,19 @@ const add_page_content = (res) => {
   page_content.appendChild(node);
   page_content.parentNode.style.display = 'block'
   page_content.parentNode.classList.add('animate__animated', 'animate__fadeIn', 'animate__fast');
-  let titles = document.getElementsByTagName('img');
-  for (var i = 0; i < titles.length; i++) {
-    if (titles[i].title) {
-      console.log(titles[i].title);
+  let titles = page_content.getElementsByTagName('img');
+  console.log(titles);
+  //for (var i = 0; i < titles.length; i++) {
+  //  if (titles[i].title) {
+  //    console.log(titles[i].title);
 
-      var img_node = document.createElement('div');
-      img_node.classList.add(`image_${titles[i].alt}`);
-      img_node.innerHTML = `<img src='${titles[i].src}'>`;
-      titles[i].parentNode.append(img_node);
-      titles[i].remove();
-    }
-  }
+  //    var img_node = document.createElement('div');
+  //    img_node.classList.add(`image_${titles[i].alt}`);
+  //    img_node.innerHTML = `<img src='${titles[i].src}'>`;
+  //    titles[i].parentNode.append(img_node);
+  //    titles[i].remove();
+  //  }
+  //}
 }
 
 if (sessionStorage.getItem('head_content')) {
