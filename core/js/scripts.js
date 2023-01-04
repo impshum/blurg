@@ -141,6 +141,12 @@ const add_page_content = (res) => {
   page_content.appendChild(node);
   page_content.parentNode.style.display = 'block'
   page_content.parentNode.classList.add('animate__animated', 'animate__fadeIn', 'animate__fast');
+  let titles = page_content.getElementsByTagName('img');
+  for (var i = 0; i < titles.length; i++) {
+    if (titles[i].title) {
+      console.log(titles[i].title);
+    }
+  }
 }
 
 if (sessionStorage.getItem('head_content')) {
