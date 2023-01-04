@@ -172,13 +172,11 @@ button.flex {
 #page_content img[alt=left] {
   width: 50%;
   float: left;
-  margin: 0rem 1rem 1rem 0rem;
 }
 
 #page_content img[alt=right] {
   width: 50%;
   float: right;
-  margin: 0rem 0rem 1rem 1rem;
 }
 
 #page_content img[alt=grid] {
