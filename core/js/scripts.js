@@ -28,11 +28,9 @@ showdown.extension("remove-p-from-img", function () {
       type: "output",
       filter: function (text) {
         text = text.replace(
-          // match all <p>'s before and after an <img> tag
           /(<\/?p[^>]*>)(?=<img.+>)|(<\/?p[^>]*>)(?<=<img.+>)/g,
           ""
         );
-
         return text;
       },
     },
