@@ -170,13 +170,13 @@ button.flex {
 }
 
 #page_content img[alt=left] {
-  width: 50%;
-  display: inline-block;
+  width: calc(50% - 8px);
+  float: left;
 }
 
 #page_content img[alt=right] {
-  width: 50%;
-  display: inline-block;
+  width: calc(50% - 8px);
+  float: right;
 }
 
 #page_content img[alt=grid] {
