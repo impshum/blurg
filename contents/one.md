@@ -10,11 +10,23 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 </center>
 
-<center>
+<div class='columns is-multiline'>
+  <div class='column is-4'>
+    ![third](https://github.com/impshum/blurg/blob/main/contents/images/thing.jpg?raw=true)
+  </div>
+</div>
 
-![third](https://github.com/impshum/blurg/blob/main/contents/images/thing.jpg?raw=true)
-
-</center>
+<div class='columns is-multiline'>
+<div class='column is-4'>
+  ![third](https://github.com/impshum/blurg/blob/main/contents/images/thing.jpg?raw=true)
+</div>
+<div class='column is-4'>
+  ![third](https://github.com/impshum/blurg/blob/main/contents/images/thing.jpg?raw=true)
+</div>
+<div class='column is-4'>
+  ![third](https://github.com/impshum/blurg/blob/main/contents/images/thing.jpg?raw=true)
+</div>
+</div>
 
 * * *
 
