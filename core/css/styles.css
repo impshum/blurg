@@ -171,12 +171,12 @@ button.flex {
 
 #page_content img[alt=left] {
   width: 50%;
-  float: left;
+  display: inline-block;
 }
 
 #page_content img[alt=right] {
   width: 50%;
-  float: right;
+  display: inline-block;
 }
 
 #page_content img[alt=grid] {
