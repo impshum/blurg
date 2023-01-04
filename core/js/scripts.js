@@ -147,6 +147,7 @@ const add_page_content = (res) => {
       console.log(titles[i].title);
 
       var img_node = document.createElement('div');
+      img_node.classList.add(`image_${titles[i].alt}`);
       img_node.innerHTML = `<img src='${titles[i].src}'>`;
       titles[i].parentNode.append(img_node);
       titles[i].remove();

@@ -168,17 +168,16 @@ button.flex {
   border: 1px solid #526a80;
   border-radius: 5px;
 }
-
-#page_content img[alt=third] {
-  width: 31%;
-  margin: 5px;
-}
-
+                   
 #page_content img[alt=half] {
   width: 47.6%;
   margin: 5px;
 }
 
+#page_content .image_third {
+  width: 31%;
+  margin: 5px;
+}
 /*
 #page_content img::after {
     content: "CAPTION";
