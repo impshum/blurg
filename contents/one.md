@@ -16,7 +16,7 @@ THESE THIRDS
 
 <center>
 ![third](https://github.com/impshum/blurg/blob/main/contents/images/thing.jpg?raw=true)![third](https://github.com/impshum/blurg/blob/main/contents/images/thing.jpg?raw=true)![third](https://github.com/impshum/blurg/blob/main/contents/images/thing.jpg?raw=true)
-CAPTION
+<figcaption>CAPTION</figcaption>
 </center>
 
 * * *
