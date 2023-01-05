@@ -65,6 +65,31 @@ const get_data = async (url, json = true) => {
   }
 }
 
+
+const add_captions = () => {
+  var elements = document.querySelectorAll("#page_content img");
+  Array.prototype.forEach.call(elements, function(el, i) {
+    if (el.getAttribute("alt") == 'half' || el.getAttribute("alt") == 'third') {
+      const caption = document.createElement('figcaption');
+      var node = document.createTextNode(el.getAttribute("title"));
+      caption.appendChild(node);
+      const wrapper = document.createElement('figure');
+      wrapper.classList.add('image');
+      if (el.getAttribute("alt") == 'half') {
+        wrapper.classList.add('half');
+      }
+      if (el.getAttribute("alt") == 'third') {
+        wrapper.classList.add('third');
+      }
+      el.parentNode.insertBefore(wrapper, el);
+      el.parentNode.removeChild(el);
+      wrapper.appendChild(el);
+      wrapper.appendChild(caption);
+    }
+  });
+}
+
+
 const get_blurgs = () => {
   window.setTimeout(() => {
     get_data(`https://api.github.com/repos/impshum/blurg/forks`, true)
@@ -156,20 +181,9 @@ const add_page_content = (res) => {
   page_content.appendChild(node);
   page_content.parentNode.style.display = 'block'
   page_content.parentNode.classList.add('animate__animated', 'animate__fadeIn', 'animate__fast');
-  let titles = page_content.getElementsByTagName('img');
-  console.log(titles);
-  //for (var i = 0; i < titles.length; i++) {
-  //  if (titles[i].title) {
-  //    console.log(titles[i].title);
-
-  //    var img_node = document.createElement('div');
-  //    img_node.classList.add(`image_${titles[i].alt}`);
-  //    img_node.innerHTML = `<img src='${titles[i].src}'>`;
-  //    titles[i].parentNode.append(img_node);
-  //    titles[i].remove();
-  //  }
-  //}
+  add_captions();
 }
+
 
 if (sessionStorage.getItem('head_content')) {
   var res = JSON.parse(sessionStorage.getItem('head_content'))
@@ -199,48 +213,19 @@ if (sessionStorage.getItem('coffee_content')) {
 } else {
   get_data(`https://raw.githubusercontent.com/${github_username}/blurg/main/contents/partials/coffee.md`, false)
     .then((res) => {
-      add_coffee_content(res);
+      add_coffee_content(res)
       sessionStorage.setItem('coffee_content', JSON.stringify(res));
     });
 }
 
 if (sessionStorage.getItem(page)) {
   var res = JSON.parse(sessionStorage.getItem(page));
-  add_page_content(res);
+  add_page_content(res)
 } else {
   get_data(`https://raw.githubusercontent.com/${github_username}/blurg/main/${page}`, false)
     .then((res) => {
-      add_page_content(res);
+      add_page_content(res)
+
       sessionStorage.setItem(page, JSON.stringify(res));
     });
 }
-
-
-function ready(fn) {
-  if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
-    var elements = document.querySelectorAll("img");
-    Array.prototype.forEach.call(elements, function(el, i) {
-      if (el.getAttribute("alt") == 'half' || el.getAttribute("alt") == 'third') {
-        const caption = document.createElement('figcaption');
-        var node = document.createTextNode(el.getAttribute("title"));
-        caption.appendChild(node);
-        const wrapper = document.createElement('figure');
-        wrapper.classList.add('image');
-        if (el.getAttribute("alt") == 'half') {
-          wrapper.classList.add('half');
-        }
-        if (el.getAttribute("alt") == 'third') {
-          wrapper.classList.add('third');
-        }
-        el.parentNode.insertBefore(wrapper, el);
-        el.parentNode.removeChild(el);
-        wrapper.appendChild(el);
-        wrapper.appendChild(caption);
-      }
-    });
-
-  } else {
-    document.addEventListener('DOMContentLoaded', fn);
-  }
-}
-window.onload = ready;
