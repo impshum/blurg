@@ -162,7 +162,7 @@ button.flex {
 }
 
 #page_content figure {
-  width: 100%;
+  width: auto;
 }
 
 #page_content img {
