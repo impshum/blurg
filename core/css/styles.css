@@ -195,7 +195,7 @@ button.flex {
   }
 }
 
-#page_content figcaption {
+#page_content figcaption, #page_content img + em {
   font-size: 12px;
   text-align: center;
   color: #ccc;
