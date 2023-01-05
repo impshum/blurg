@@ -7,6 +7,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 <center>
 ![third](https://github.com/impshum/blurg/blob/main/contents/images/thing.jpg?raw=true "CAPTION")![third](https://github.com/impshum/blurg/blob/main/contents/images/thing.jpg?raw=true "CAPTION")![third](https://github.com/impshum/blurg/blob/main/contents/images/thing.jpg?raw=true "CAPTION")![third](https://github.com/impshum/blurg/blob/main/contents/images/thing.jpg?raw=true "CAPTION")![third](https://github.com/impshum/blurg/blob/main/contents/images/thing.jpg?raw=true "CAPTION")![third](https://github.com/impshum/blurg/blob/main/contents/images/thing.jpg?raw=true "CAPTION")
 </center>
+
 <center>
 ![half](https://github.com/impshum/blurg/blob/main/contents/images/thing.jpg?raw=true "CAPTION")![half](https://github.com/impshum/blurg/blob/main/contents/images/thing.jpg?raw=true "CAPTION")
 </center>
@@ -14,8 +15,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 ![](https://github.com/impshum/blurg/blob/main/contents/images/thing.jpg?raw=true "CAPTION")
 
 <center>
-![third](https://github.com/impshum/blurg/blob/main/contents/images/thing.jpg?raw=true)![third](https://github.com/impshum/blurg/blob/main/contents/images/thing.jpg?raw=true)![third](https://github.com/impshum/blurg/blob/main/contents/images/thing.jpg?raw=true)
-CAPTION
+![third](https://github.com/impshum/blurg/blob/main/contents/images/thing.jpg?raw=true)![third](https://github.com/impshum/blurg/blob/main/contents/images/thing.jpg?raw=true)![third](https://github.com/impshum/blurg/blob/main/contents/images/thing.jpg?raw=true "CAPTION")
 </center>
 
 * * *

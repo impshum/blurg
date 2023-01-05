@@ -3,7 +3,7 @@ html {
 }
 
 * {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Nunito', sans-serif !important;
 }
 
 .flex-container {
@@ -161,6 +161,10 @@ button.flex {
   display: none;
 }
 
+#page_content figure {
+  width: 100%;
+}
+
 #page_content img {
   width: 100%;
   min-height: 100px;
@@ -194,6 +198,7 @@ button.flex {
 #page_content figcaption {
   font-size: 12px;
   text-align: center;
+  color: #ccc;
 }
 
 #clear_session_data {
