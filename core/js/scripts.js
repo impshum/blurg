@@ -69,23 +69,25 @@ const get_data = async (url, json = true) => {
 const add_captions = () => {
   var elements = document.querySelectorAll("#page_content img");
   Array.prototype.forEach.call(elements, function(el, i) {
+    const caption = document.createElement('figcaption');
+    var node = document.createTextNode(el.getAttribute("title"));
+    caption.appendChild(node);
+    const wrapper = document.createElement('figure');
+    wrapper.classList.add('image');
+    if (el.getAttribute("alt") == 'half') {
+      wrapper.classList.add('half');
+    }
+    if (el.getAttribute("alt") == 'third') {
+      wrapper.classList.add('third');
+    }
+    el.parentNode.insertBefore(wrapper, el);
+    el.parentNode.removeChild(el);
+    wrapper.appendChild(el);
     if (el.getAttribute("title")) {
-      const caption = document.createElement('figcaption');
-      var node = document.createTextNode(el.getAttribute("title"));
-      caption.appendChild(node);
-      const wrapper = document.createElement('figure');
-      wrapper.classList.add('image');
-      if (el.getAttribute("alt") == 'half') {
-        wrapper.classList.add('half');
-      }
-      if (el.getAttribute("alt") == 'third') {
-        wrapper.classList.add('third');
-      }
-      el.parentNode.insertBefore(wrapper, el);
-      el.parentNode.removeChild(el);
-      wrapper.appendChild(el);
       wrapper.appendChild(caption);
     }
+
+
   });
 }
 
