@@ -193,6 +193,7 @@ button.flex {
 
 #page_content figcaption {
   font-size: 12px;
+  text-align: center;
 }
 
 #clear_session_data {

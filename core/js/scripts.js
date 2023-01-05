@@ -69,7 +69,7 @@ const get_data = async (url, json = true) => {
 const add_captions = () => {
   var elements = document.querySelectorAll("#page_content img");
   Array.prototype.forEach.call(elements, function(el, i) {
-    if (el.getAttribute("alt") == 'half' || el.getAttribute("alt") == 'third') {
+    if (el.getAttribute("title")) {
       const caption = document.createElement('figcaption');
       var node = document.createTextNode(el.getAttribute("title"));
       caption.appendChild(node);
