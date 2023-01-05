@@ -169,35 +169,30 @@ button.flex {
   border-radius: 5px;
 }
 
-#page_content img[alt=third] {
+#page_content figure.image.third {
   width: 31%;
   margin: 5px;
+  display: inline-block;
 }
 
-#page_content img[alt=half] {
+#page_content figure.image.half {
   width: 47.6%;
   margin: 5px;
-}
-
-#page_content img::after {
-  content: "CAPTION";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(120deg, #eaee44, #33d0ff);
-  opacity: .7;
+  display: inline-block;
 }
 
 @media only screen and (max-width : 768px) {
-  #page_content img[alt=third] {
+  #page_content figure.image.third {
     width: 100%;
   }
 
-  #page_content img[alt=half] {
+  #page_content figure.image.half {
     width: 100%;
   }
+}
+
+#page_content figcaption {
+  font-size: 12px;
 }
 
 #clear_session_data {

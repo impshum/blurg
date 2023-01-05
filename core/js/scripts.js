@@ -22,19 +22,17 @@ showdown.extension('remove_p', function() {
   }];
 });
 
-showdown.extension("remove-p-from-img", function () {
-  return [
-    {
-      type: "output",
-      filter: function (text) {
-        text = text.replace(
-          /(<\/?p[^>]*>)(?=<img.+>)|(<\/?p[^>]*>)(?<=<img.+>)/g,
-          ""
-        );
-        return text;
-      },
+showdown.extension("remove-p-from-img", function() {
+  return [{
+    type: "output",
+    filter: function(text) {
+      text = text.replace(
+        /(<\/?p[^>]*>)(?=<img.+>)|(<\/?p[^>]*>)(?<=<img.+>)/g,
+        ""
+      );
+      return text;
     },
-  ];
+  }, ];
 });
 
 var converter = new showdown.Converter({
@@ -216,3 +214,33 @@ if (sessionStorage.getItem(page)) {
       sessionStorage.setItem(page, JSON.stringify(res));
     });
 }
+
+
+function ready(fn) {
+  if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+    var elements = document.querySelectorAll("img");
+    Array.prototype.forEach.call(elements, function(el, i) {
+      if (el.getAttribute("alt") == 'half' || el.getAttribute("alt") == 'third') {
+        const caption = document.createElement('figcaption');
+        var node = document.createTextNode(el.getAttribute("title"));
+        caption.appendChild(node);
+        const wrapper = document.createElement('figure');
+        wrapper.classList.add('image');
+        if (el.getAttribute("alt") == 'half') {
+          wrapper.classList.add('half');
+        }
+        if (el.getAttribute("alt") == 'third') {
+          wrapper.classList.add('third');
+        }
+        el.parentNode.insertBefore(wrapper, el);
+        el.parentNode.removeChild(el);
+        wrapper.appendChild(el);
+        wrapper.appendChild(caption);
+      }
+    });
+
+  } else {
+    document.addEventListener('DOMContentLoaded', fn);
+  }
+}
+window.onload = ready;
