@@ -86,8 +86,6 @@ const add_captions = () => {
     if (el.getAttribute("title")) {
       wrapper.appendChild(caption);
     }
-
-
   });
 }
 
