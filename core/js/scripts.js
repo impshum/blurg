@@ -27,7 +27,7 @@ showdown.extension("remove-p-from-img", function() {
     type: "output",
     filter: function(text) {
       text = text.replace(
-        /(<\/?p[^>]*>)(?=<img.+>)|(<\/?p[^>]*>)(?<=<img.+>)/g,
+        '/<p>((?:.(?!p>))*?)(<a[^>]*>)?\s*(<img[^>]+>)(<\/a>)?(.*?)<\/p>/is',
         ""
       );
       return text;
