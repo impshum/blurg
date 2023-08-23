@@ -5,7 +5,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
   Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
 <div class="iframe-container">
-  <iframe src="/contents/embeds/transport-costs.html"></iframe>
+  <iframe src="/contents/embeds/transport-costs.html" width="40%"></iframe>
 </div>
 
 <center>
