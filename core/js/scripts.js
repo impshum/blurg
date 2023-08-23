@@ -181,6 +181,16 @@ const add_page_content = (res) => {
   page_content.appendChild(node);
   page_content.parentNode.style.display = 'block'
   page_content.parentNode.classList.add('animate__animated', 'animate__fadeIn', 'animate__fast');
+  let charts = page_content.getElementsByTagName('chart');
+  for (let i = 0; i < charts.length; i++) {
+    let chart_name = charts[i].getAttribute('name');
+
+    get_data(`https://raw.githubusercontent.com/${github_username}/blurg/main/contents/embeds/${chart_name}.html`, false)
+      .then((res) => {
+        console.log(res);
+        //charts[i].innerHTML = res;
+      });
+  }
   add_captions();
 }
 
