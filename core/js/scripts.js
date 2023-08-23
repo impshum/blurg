@@ -184,12 +184,12 @@ const add_page_content = (res) => {
   let charts = page_content.getElementsByTagName('chart');
   for (let i = 0; i < charts.length; i++) {
     let chart_name = charts[i].getAttribute('name');
-
+    console.log(chart_name);
     get_data(`https://raw.githubusercontent.com/${github_username}/blurg/main/contents/embeds/${chart_name}.html`, false)
       .then((res) => {
         console.log(res);
         //charts[i].innerHTML = res;
-        charts[i].src = "data:text/html;charset=utf-8," + escape(res);
+        charts[i].innerHTML = res;
       });
   }
   add_captions();
