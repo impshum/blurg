@@ -189,6 +189,7 @@ const add_page_content = (res) => {
       .then((res) => {
         console.log(res);
         //charts[i].innerHTML = res;
+        charts[i].src = "data:text/html;charset=utf-8," + escape(res);
       });
   }
   add_captions();
