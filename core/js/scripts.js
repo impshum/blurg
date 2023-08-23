@@ -181,6 +181,11 @@ const add_page_content = (res) => {
   page_content.appendChild(node);
   page_content.parentNode.style.display = 'block'
   page_content.parentNode.classList.add('animate__animated', 'animate__fadeIn', 'animate__fast');
+  let iframes = page_content.getElementsByTagName('iframe');
+  for (let i = 0; i < iframes.length; i++) {
+    new_html = '<div class="iframe-container">' + iframes[i].innerHTML + '</div>';
+    iframes[i].innerHTML = new_html
+  }
   add_captions();
 }
 
