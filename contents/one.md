@@ -8,6 +8,12 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
   <iframe src="/embeds/transport-costs.html"></iframe>
 </div>
 
+<div class="iframe-container">
+  <iframe name="transport-costs" src="javascript:void(0);"></iframe>
+</div>
+
+<chart name="transport-costs"></chart>
+
 <center>
 ![third](https://github.com/impshum/blurg/blob/main/contents/images/thing.jpg?raw=true "CAPTION")![third](https://github.com/impshum/blurg/blob/main/contents/images/thing.jpg?raw=true "CAPTION")![third](https://github.com/impshum/blurg/blob/main/contents/images/thing.jpg?raw=true "CAPTION")
 </center>
