@@ -185,9 +185,11 @@ const add_page_content = (res) => {
   let charts = document.getElementsByTagName('chart');
   for (let i = 0; i < charts.length; i++) {
     let chart_name = charts[i].getAttribute('name');
+    let chart_width = charts[i].getAttribute('width');
+
     get_data(`https://raw.githubusercontent.com/${github_username}/blurg/main/embeds/${chart_name}.html`, false)
       .then((res) => {
-        let chart_html = `<div class="iframe-container"><iframe src="about:blank"></iframe></div>`;
+        let chart_html = `<div class="iframe-container"><iframe src="about:blank" style="width: ${chart_width} !important;"></iframe></div>`;
         charts[i].innerHTML = chart_html;
         let chart_frame = charts[i].getElementsByTagName('iframe')[0];
         chart_frame.contentWindow.document.open();
@@ -195,7 +197,7 @@ const add_page_content = (res) => {
         chart_frame.contentWindow.document.close();
       });
   }
-  
+
   add_captions();
 }
 
