@@ -181,6 +181,21 @@ const add_page_content = (res) => {
   page_content.appendChild(node);
   page_content.parentNode.style.display = 'block'
   page_content.parentNode.classList.add('animate__animated', 'animate__fadeIn', 'animate__fast');
+
+  let charts = document.getElementsByTagName('chart');
+  for (let i = 0; i < charts.length; i++) {
+    let chart_name = charts[i].getAttribute('name');
+    get_data(`https://raw.githubusercontent.com/${github_username}/blurg/main/embeds/${chart_name}.html`, false)
+      .then((res) => {
+        let chart_html = `<div class="iframe-container"><iframe src="about:blank"></iframe></div>`;
+        charts[i].innerHTML = chart_html;
+        let chart_frame = charts[i].getElementsByTagName('iframe')[0];
+        chart_frame.contentWindow.document.open();
+        chart_frame.contentWindow.document.write(res);
+        chart_frame.contentWindow.document.close();
+      });
+  }
+  
   add_captions();
 }
 
